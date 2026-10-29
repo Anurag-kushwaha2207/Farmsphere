@@ -1,39 +1,102 @@
 {
   "system": "FarmSphere AI Level 3 Smart Agriculture Platform",
-  "evaluation_date": "2026-10-29 14:16:27",
+  "evaluation_date": "2026-10-29 14:55:37",
+  "evaluation_protocol": "Held-out test set evaluation with group-aware splitting and naive baseline benchmarking",
+  "random_state": 42,
   "models": {
     "crop_recommendation": {
       "algorithm": "Random Forest",
-      "total_test_samples": 2400,
+      "total_samples": 2400,
+      "train_samples": 1920,
+      "test_samples": 480,
       "num_classes": 8,
-      "accuracy_pct": 98.62,
-      "weighted_precision_pct": 98.63,
-      "weighted_recall_pct": 98.62,
-      "weighted_f1_pct": 98.63,
+      "features": [
+        "N",
+        "P",
+        "K",
+        "temperature",
+        "humidity",
+        "ph",
+        "rainfall"
+      ],
+      "5_fold_cv_accuracy_mean": 0.9318,
+      "5_fold_cv_accuracy_std": 0.0091,
+      "train_metrics": {
+        "accuracy": 0.9292,
+        "precision_weighted": 0.93,
+        "recall_weighted": 0.9292,
+        "f1_weighted": 0.9295
+      },
+      "test_metrics_held_out": {
+        "accuracy": 0.9313,
+        "precision_weighted": 0.9324,
+        "recall_weighted": 0.9313,
+        "f1_weighted": 0.9314,
+        "macro_f1": 0.9314
+      },
+      "naive_baseline": {
+        "type": "Uniform Random Guessing",
+        "expected_accuracy": 0.125
+      },
+      "generalization_gap": -0.0021,
       "status": "PASSED"
     },
     "crop_suitability": {
       "Wheat": {
-        "samples_evaluated": 2200,
-        "score_r2": 0.9654,
-        "score_mae": 1.79,
-        "class_accuracy_pct": 95.55,
+        "total_samples": 2200,
+        "train_samples": 1760,
+        "test_samples": 440,
+        "train_r2_score": 0.9805,
+        "test_r2_held_out": 0.9091,
+        "test_mae_held_out": 3.09,
+        "test_class_accuracy_held_out": 84.09,
         "status": "PASSED"
       },
       "Rice (Paddy)": {
-        "samples_evaluated": 2200,
-        "score_r2": 0.9512,
-        "score_mae": 2.53,
-        "class_accuracy_pct": 97.55,
+        "total_samples": 2200,
+        "train_samples": 1760,
+        "test_samples": 440,
+        "train_r2_score": 0.9757,
+        "test_r2_held_out": 0.8528,
+        "test_mae_held_out": 4.91,
+        "test_class_accuracy_held_out": 90.0,
         "status": "PASSED"
       }
     },
     "yield_prediction": {
+      "algorithm": "RandomForestRegressor Pipeline (Group-Aware Split by field_id)",
       "total_samples": 5083,
-      "r2_score": 0.9954,
-      "mae_tonnes_per_ha": 0.26,
-      "rmse_tonnes_per_ha": 0.518,
-      "mape_pct": 4.44,
+      "train_samples": 4063,
+      "test_samples": 1020,
+      "unique_fields_total": 299,
+      "features": [
+        "crop_name",
+        "soil_type",
+        "irrigation_source",
+        "field_area_ha",
+        "season",
+        "avg_temp_c",
+        "season_rainfall_mm",
+        "avg_humidity_pct"
+      ],
+      "train_metrics": {
+        "r2_score": 0.9953,
+        "mae_tonnes_per_ha": 0.26
+      },
+      "test_metrics_held_out": {
+        "r2_score": 0.9956,
+        "mae_tonnes_per_ha": 0.26,
+        "rmse_tonnes_per_ha": 0.505,
+        "mape_pct": 4.62
+      },
+      "naive_crop_mean_baseline": {
+        "description": "Predicts training crop-mean yield for each crop in test set",
+        "baseline_r2": 0.9507,
+        "baseline_mae_tonnes_per_ha": 0.835,
+        "baseline_rmse_tonnes_per_ha": 1.682
+      },
+      "within_crop_r2": 0.9093,
+      "beats_naive_baseline": true,
       "status": "PASSED"
     }
   }

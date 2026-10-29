@@ -14,6 +14,8 @@ import os
 import pandas as pd
 import numpy as np
 
+np.random.seed(42)
+
 RAW_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../datasets/raw'))
 PROCESSED_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../datasets/processed'))
 os.makedirs(PROCESSED_DIR, exist_ok=True)
@@ -209,9 +211,9 @@ class DatasetIntegrator:
         
         merged['actual_yield_quintals_per_acre'] = round(merged['actual_yield_tonnes_per_ha'] * 4.047, 2)
         
-        # Feature engineered columns
+        # Feature engineered columns (including field_id for group splitting)
         yield_final = merged[[
-            'crop_name', 'soil_type', 'irrigation_source', 'field_area_ha',
+            'field_id', 'crop_name', 'soil_type', 'irrigation_source', 'field_area_ha',
             'season', 'avg_temp_c', 'season_rainfall_mm', 'avg_humidity_pct',
             'actual_yield_tonnes_per_ha', 'actual_yield_quintals_per_acre'
         ]].copy()
