@@ -18,14 +18,9 @@ import os
 import numpy as np
 import pandas as pd
 
-# Fixed seed for 100% reproducibility across runs
 SEED = 42
-np.random.seed(SEED)
 
 RAW_DIR = os.path.join(os.path.dirname(__file__), 'raw')
-os.makedirs(RAW_DIR, exist_ok=True)
-
-print(f"Generating SIMULATED agricultural benchmark datasets in {RAW_DIR} (seed={SEED})...")
 
 DISTRICTS = [
     'Bareilly, UP', 'Varanasi, UP', 'Meerut, UP', 'Karnal, Haryana', 
@@ -35,114 +30,6 @@ DISTRICTS = [
 
 SOIL_TYPES = ['Alluvial', 'Clay Loam', 'Sandy Loam', 'Black Soil', 'Red Loam']
 
-# -----------------------------------------------------------------------------
-# 1. Soil Testing Dataset (Simulated lab records)
-# -----------------------------------------------------------------------------
-n_soil_samples = 2200
-soil_data = []
-
-for i in range(1, n_soil_samples + 1):
-    district = DISTRICTS[i % len(DISTRICTS)]
-    stype = SOIL_TYPES[i % len(SOIL_TYPES)]
-    
-    # Soil parameter distributions based on typical Indian agricultural testing
-    if 'Black' in stype:
-        ph = np.clip(np.random.normal(7.6, 0.35), 6.5, 8.6)
-        n = np.clip(np.random.normal(75, 20), 25, 140)
-        p = np.clip(np.random.normal(35, 12), 10, 75)
-        k = np.clip(np.random.normal(85, 20), 30, 140)
-        oc = np.clip(np.random.normal(0.65, 0.15), 0.25, 1.1)
-        ec = np.clip(np.random.normal(0.55, 0.20), 0.15, 1.5)
-        moisture = np.clip(np.random.normal(48, 10), 20, 75)
-    elif 'Sandy' in stype:
-        ph = np.clip(np.random.normal(6.8, 0.45), 5.6, 8.0)
-        n = np.clip(np.random.normal(55, 15), 18, 110)
-        p = np.clip(np.random.normal(25, 10), 8, 55)
-        k = np.clip(np.random.normal(40, 12), 15, 80)
-        oc = np.clip(np.random.normal(0.40, 0.10), 0.15, 0.70)
-        ec = np.clip(np.random.normal(0.40, 0.12), 0.10, 1.0)
-        moisture = np.clip(np.random.normal(35, 8), 12, 55)
-    elif 'Clay' in stype:
-        ph = np.clip(np.random.normal(6.5, 0.50), 5.4, 7.8)
-        n = np.clip(np.random.normal(95, 22), 35, 160)
-        p = np.clip(np.random.normal(45, 15), 15, 85)
-        k = np.clip(np.random.normal(70, 18), 25, 120)
-        oc = np.clip(np.random.normal(0.72, 0.18), 0.30, 1.3)
-        ec = np.clip(np.random.normal(0.65, 0.25), 0.20, 1.8)
-        moisture = np.clip(np.random.normal(60, 12), 25, 85)
-    else: # Alluvial / Red Loam
-        ph = np.clip(np.random.normal(7.1, 0.45), 6.0, 8.2)
-        n = np.clip(np.random.normal(85, 22), 28, 150)
-        p = np.clip(np.random.normal(40, 14), 12, 80)
-        k = np.clip(np.random.normal(60, 16), 22, 110)
-        oc = np.clip(np.random.normal(0.58, 0.14), 0.25, 1.05)
-        ec = np.clip(np.random.normal(0.50, 0.18), 0.15, 1.4)
-        moisture = np.clip(np.random.normal(52, 10), 22, 80)
-        
-    soil_data.append({
-        'sample_id': f'SOIL_{i:05d}',
-        'district': district,
-        'soil_type': stype,
-        'soil_ph': round(float(ph), 2),
-        'nitrogen_mg_kg': round(float(n), 1),
-        'phosphorus_mg_kg': round(float(p), 1),
-        'potassium_mg_kg': round(float(k), 1),
-        'organic_carbon_pct': round(float(oc), 2),
-        'electrical_conductivity_ds_m': round(float(ec), 2),
-        'soil_moisture_pct': round(float(moisture), 1)
-    })
-
-df_soil = pd.DataFrame(soil_data)
-df_soil.to_csv(os.path.join(RAW_DIR, 'soil_testing_data.csv'), index=False)
-print(f" Saved soil_testing_data.csv ({len(df_soil)} rows) [SIMULATED]")
-
-# -----------------------------------------------------------------------------
-# 2. Weather & Climate Dataset (Simulated district observations)
-# -----------------------------------------------------------------------------
-SEASONS = ['Kharif (Monsoon)', 'Rabi (Winter)', 'Zaid (Summer)']
-weather_data = []
-
-for district in DISTRICTS:
-    for year in range(2018, 2026):
-        for season in SEASONS:
-            if 'Kharif' in season:
-                temp_avg = np.random.normal(29.0, 1.5)
-                humidity = np.random.normal(78.0, 6.0)
-                rainfall = np.random.normal(850.0, 150.0)
-                solar_rad = np.random.normal(18.5, 2.0)
-            elif 'Rabi' in season:
-                temp_avg = np.random.normal(18.5, 1.8)
-                humidity = np.random.normal(60.0, 7.0)
-                rainfall = np.random.normal(75.0, 30.0)
-                solar_rad = np.random.normal(16.0, 1.8)
-            else: # Zaid
-                temp_avg = np.random.normal(34.0, 2.0)
-                humidity = np.random.normal(45.0, 8.0)
-                rainfall = np.random.normal(40.0, 20.0)
-                solar_rad = np.random.normal(22.0, 2.2)
-                
-            weather_data.append({
-                'weather_record_id': f'WTR_{district[:3].upper()}_{year}_{season[:3].upper()}',
-                'district': district,
-                'year': year,
-                'season': season,
-                'avg_temp_c': round(float(temp_avg), 1),
-                'min_temp_c': round(float(temp_avg - np.random.uniform(5.5, 8.5)), 1),
-                'max_temp_c': round(float(temp_avg + np.random.uniform(5.5, 8.5)), 1),
-                'avg_humidity_pct': round(float(np.clip(humidity, 30, 98)), 1),
-                'season_rainfall_mm': round(float(max(rainfall, 5.0)), 1),
-                'solar_radiation_mj_m2': round(float(solar_rad), 1)
-            })
-
-df_weather = pd.DataFrame(weather_data)
-df_weather.to_csv(os.path.join(RAW_DIR, 'weather_climate_data.csv'), index=False)
-print(f" Saved weather_climate_data.csv ({len(df_weather)} rows) [SIMULATED]")
-
-# -----------------------------------------------------------------------------
-# 3. Crop Master Dataset (Calibrated against ICAR / DES Govt of India Benchmarks)
-# Note: Base yields reflect Indian national averages & irrigated potentials from DES 2022-23
-# Sugarcane is omitted to keep master, recommender, and yield dataset 100% consistent.
-# -----------------------------------------------------------------------------
 CROPS_MASTER = [
     {
         'crop_id': 'wheat',
@@ -154,7 +41,7 @@ CROPS_MASTER = [
         'req_n_kg_ha': 120, 'req_p_kg_ha': 60, 'req_k_kg_ha': 40,
         'min_water_req_mm': 350, 'opt_water_req_mm': 500, 'max_water_req_mm': 650,
         'preferred_soil': 'Alluvial, Loamy',
-        'base_potential_yield_t_ha': 3.60  # DES 2022-23 All-India Avg ~3.53 t/ha
+        'base_potential_yield_t_ha': 3.60
     },
     {
         'crop_id': 'rice',
@@ -166,7 +53,7 @@ CROPS_MASTER = [
         'req_n_kg_ha': 120, 'req_p_kg_ha': 50, 'req_k_kg_ha': 50,
         'min_water_req_mm': 900, 'opt_water_req_mm': 1300, 'max_water_req_mm': 2200,
         'preferred_soil': 'Clayey, Clay Loam',
-        'base_potential_yield_t_ha': 2.90  # DES 2022-23 All-India Avg ~2.81 t/ha
+        'base_potential_yield_t_ha': 2.90
     },
     {
         'crop_id': 'maize',
@@ -178,7 +65,7 @@ CROPS_MASTER = [
         'req_n_kg_ha': 120, 'req_p_kg_ha': 60, 'req_k_kg_ha': 50,
         'min_water_req_mm': 450, 'opt_water_req_mm': 600, 'max_water_req_mm': 900,
         'preferred_soil': 'Sandy Loam, Loamy',
-        'base_potential_yield_t_ha': 3.20  # DES 2022-23 All-India Avg ~3.19 t/ha
+        'base_potential_yield_t_ha': 3.20
     },
     {
         'crop_id': 'cotton',
@@ -190,7 +77,7 @@ CROPS_MASTER = [
         'req_n_kg_ha': 100, 'req_p_kg_ha': 50, 'req_k_kg_ha': 50,
         'min_water_req_mm': 550, 'opt_water_req_mm': 750, 'max_water_req_mm': 1100,
         'preferred_soil': 'Black Soil, Clay Loam',
-        'base_potential_yield_t_ha': 1.50  # DES 2022-23 Seed cotton ~1.45 t/ha (~480 kg lint/ha)
+        'base_potential_yield_t_ha': 1.50
     },
     {
         'crop_id': 'chickpea',
@@ -202,7 +89,7 @@ CROPS_MASTER = [
         'req_n_kg_ha': 25, 'req_p_kg_ha': 50, 'req_k_kg_ha': 30,
         'min_water_req_mm': 250, 'opt_water_req_mm': 350, 'max_water_req_mm': 500,
         'preferred_soil': 'Sandy Loam, Alluvial',
-        'base_potential_yield_t_ha': 1.20  # DES 2022-23 All-India Avg ~1.19 t/ha
+        'base_potential_yield_t_ha': 1.20
     },
     {
         'crop_id': 'mustard',
@@ -214,7 +101,7 @@ CROPS_MASTER = [
         'req_n_kg_ha': 80, 'req_p_kg_ha': 40, 'req_k_kg_ha': 40,
         'min_water_req_mm': 250, 'opt_water_req_mm': 350, 'max_water_req_mm': 500,
         'preferred_soil': 'Sandy Loam, Loam',
-        'base_potential_yield_t_ha': 1.45  # DES 2022-23 All-India Avg ~1.46 t/ha
+        'base_potential_yield_t_ha': 1.45
     },
     {
         'crop_id': 'potato',
@@ -226,176 +113,254 @@ CROPS_MASTER = [
         'req_n_kg_ha': 150, 'req_p_kg_ha': 80, 'req_k_kg_ha': 120,
         'min_water_req_mm': 400, 'opt_water_req_mm': 550, 'max_water_req_mm': 750,
         'preferred_soil': 'Sandy Loam, Loose Alluvial',
-        'base_potential_yield_t_ha': 23.50  # DES 2022-23 All-India Avg ~23.8 t/ha
+        'base_potential_yield_t_ha': 23.50
     }
 ]
 
-df_crop_master = pd.DataFrame(CROPS_MASTER)
-df_crop_master.to_csv(os.path.join(RAW_DIR, 'crop_master_data.csv'), index=False)
-print(f" Saved crop_master_data.csv ({len(df_crop_master)} crops) [SIMULATED]")
+def generate_datasets(raw_dir: str = RAW_DIR):
+    np.random.seed(SEED)
+    os.makedirs(raw_dir, exist_ok=True)
+    print(f"Generating SIMULATED agricultural benchmark datasets in {raw_dir} (seed={SEED})...")
 
-# -----------------------------------------------------------------------------
-# 4. Farmer & Farm Registry Dataset
-# -----------------------------------------------------------------------------
-farm_field_records = []
-field_idx = 1
+    # 1. Soil Testing Dataset (Simulated lab records)
+    n_soil_samples = 2200
+    soil_data = []
 
-# Define fixed cropping rotation types for each field:
-# Rotation 1: Rice (Kharif) -> Wheat (Rabi) [Indo-Gangetic cereal rotation]
-# Rotation 2: Maize (Kharif) -> Chickpea (Rabi) [Cereal-Pulse rotation]
-# Rotation 3: Maize (Kharif) -> Mustard (Rabi) [Cereal-Oilseed rotation]
-# Rotation 4: Cotton (Kharif) -> Rabi fallow
-# Rotation 5: Maize (Kharif) -> Potato (Rabi)
-ROTATION_TYPES = [
-    {'kharif': 'Rice (Paddy)', 'rabi': 'Wheat'},
-    {'kharif': 'Maize', 'rabi': 'Chickpea'},
-    {'kharif': 'Maize', 'rabi': 'Mustard'},
-    {'kharif': 'Cotton (Seed Cotton)', 'rabi': None},
-    {'kharif': 'Maize', 'rabi': 'Potato'}
-]
-
-for f_id in range(1, 151):
-    district = DISTRICTS[f_id % len(DISTRICTS)]
-    farm_id = f'FARM_{f_id:04d}'
-    num_fields = 2 # 2 fields per farm
-    
-    for fld in range(1, num_fields + 1):
-        fld_id = f'FLD_{field_idx:05d}'
-        rot = ROTATION_TYPES[(field_idx - 1) % len(ROTATION_TYPES)]
-        field_idx += 1
+    for i in range(1, n_soil_samples + 1):
+        district = DISTRICTS[i % len(DISTRICTS)]
+        stype = SOIL_TYPES[i % len(SOIL_TYPES)]
         
-        area_ha = round(float(1.0 + ((fld_id.__hash__() % 30) / 10.0)), 2) # Deterministic area 1.0 - 4.0 ha
-        stype = SOIL_TYPES[(field_idx) % len(SOIL_TYPES)]
-        irrig = ['Tube Well (Canal / Groundwater)', 'Drip Irrigation', 'Sprinkler', 'Rainfed (No source)'][field_idx % 4]
-        
-        farm_field_records.append({
-            'farmer_id': f'FMR_{f_id:04d}',
-            'farm_id': farm_id,
-            'field_id': fld_id,
+        if 'Black' in stype:
+            ph = np.clip(np.random.normal(7.6, 0.35), 6.5, 8.6)
+            n = np.clip(np.random.normal(75, 20), 25, 140)
+            p = np.clip(np.random.normal(35, 12), 10, 75)
+            k = np.clip(np.random.normal(85, 20), 30, 140)
+            oc = np.clip(np.random.normal(0.65, 0.15), 0.25, 1.1)
+            ec = np.clip(np.random.normal(0.55, 0.20), 0.15, 1.5)
+            moisture = np.clip(np.random.normal(48, 10), 20, 75)
+        elif 'Sandy' in stype:
+            ph = np.clip(np.random.normal(6.8, 0.45), 5.6, 8.0)
+            n = np.clip(np.random.normal(55, 15), 18, 110)
+            p = np.clip(np.random.normal(25, 10), 8, 55)
+            k = np.clip(np.random.normal(40, 12), 15, 80)
+            oc = np.clip(np.random.normal(0.40, 0.10), 0.15, 0.70)
+            ec = np.clip(np.random.normal(0.40, 0.12), 0.10, 1.0)
+            moisture = np.clip(np.random.normal(35, 8), 12, 55)
+        elif 'Clay' in stype:
+            ph = np.clip(np.random.normal(6.5, 0.50), 5.4, 7.8)
+            n = np.clip(np.random.normal(95, 22), 35, 160)
+            p = np.clip(np.random.normal(45, 15), 15, 85)
+            k = np.clip(np.random.normal(70, 18), 25, 120)
+            oc = np.clip(np.random.normal(0.72, 0.18), 0.30, 1.3)
+            ec = np.clip(np.random.normal(0.65, 0.25), 0.20, 1.8)
+            moisture = np.clip(np.random.normal(60, 12), 25, 85)
+        else:
+            ph = np.clip(np.random.normal(7.1, 0.45), 6.0, 8.2)
+            n = np.clip(np.random.normal(85, 22), 28, 150)
+            p = np.clip(np.random.normal(40, 14), 12, 80)
+            k = np.clip(np.random.normal(60, 16), 22, 110)
+            oc = np.clip(np.random.normal(0.58, 0.14), 0.25, 1.05)
+            ec = np.clip(np.random.normal(0.50, 0.18), 0.15, 1.4)
+            moisture = np.clip(np.random.normal(52, 10), 22, 80)
+            
+        soil_data.append({
+            'sample_id': f'SOIL_{i:05d}',
             'district': district,
-            'area_hectares': area_ha,
             'soil_type': stype,
-            'irrigation_source': irrig,
-            'kharif_crop': rot['kharif'],
-            'rabi_crop': rot['rabi'],
-            'active_data_mode': 'manual'
+            'soil_ph': round(float(ph), 2),
+            'nitrogen_mg_kg': round(float(n), 1),
+            'phosphorus_mg_kg': round(float(p), 1),
+            'potassium_mg_kg': round(float(k), 1),
+            'organic_carbon_pct': round(float(oc), 2),
+            'electrical_conductivity_ds_m': round(float(ec), 2),
+            'soil_moisture_pct': round(float(moisture), 1)
         })
 
-df_farmers = pd.DataFrame(farm_field_records)
-df_farmers.to_csv(os.path.join(RAW_DIR, 'farmer_field_records.csv'), index=False)
-print(f" Saved farmer_field_records.csv ({len(df_farmers)} fields across 150 farms) [SIMULATED]")
+    df_soil = pd.DataFrame(soil_data)
+    df_soil.to_csv(os.path.join(raw_dir, 'soil_testing_data.csv'), index=False)
+    print(f" Saved soil_testing_data.csv ({len(df_soil)} rows) [SIMULATED]")
 
-# -----------------------------------------------------------------------------
-# 5. Historical Yield Observations Dataset (Simulated Harvest Records with Weather Stress)
-# Inconsistency fixes:
-# - Each field grows its designated seasonal crop EVERY YEAR (no even/odd alternation).
-# - Weather dependencies: Terminal heat stress for Wheat (if temp > 22C in Rabi),
-#   temperature stress for Rice, rainfall + irrigation water balance for all crops.
-# - Yield base numbers match DES 2022-23 realistic Indian yields.
-# -----------------------------------------------------------------------------
-yield_records = []
-rec_id = 1
-crops_lookup = {c['crop_name']: c for c in CROPS_MASTER}
+    # 2. Weather & Climate Dataset (Simulated district observations)
+    SEASONS = ['Kharif (Monsoon)', 'Rabi (Winter)', 'Zaid (Summer)']
+    weather_data = []
 
-# Pre-index weather records for fast lookup
-weather_dict = {(w['district'], w['year'], w['season']): w for _, w in df_weather.iterrows()}
+    for district in DISTRICTS:
+        for year in range(2018, 2026):
+            for season in SEASONS:
+                if 'Kharif' in season:
+                    temp_avg = np.random.normal(29.0, 1.5)
+                    humidity = np.random.normal(78.0, 6.0)
+                    rainfall = np.random.normal(850.0, 150.0)
+                    solar_rad = np.random.normal(18.5, 2.0)
+                elif 'Rabi' in season:
+                    temp_avg = np.random.normal(18.5, 1.8)
+                    humidity = np.random.normal(60.0, 7.0)
+                    rainfall = np.random.normal(75.0, 30.0)
+                    solar_rad = np.random.normal(16.0, 1.8)
+                else:
+                    temp_avg = np.random.normal(34.0, 2.0)
+                    humidity = np.random.normal(45.0, 8.0)
+                    rainfall = np.random.normal(40.0, 20.0)
+                    solar_rad = np.random.normal(22.0, 2.2)
+                    
+                weather_data.append({
+                    'weather_record_id': f'WTR_{district[:3].upper()}_{year}_{season[:3].upper()}',
+                    'district': district,
+                    'year': year,
+                    'season': season,
+                    'avg_temp_c': round(float(temp_avg), 1),
+                    'min_temp_c': round(float(temp_avg - np.random.uniform(5.5, 8.5)), 1),
+                    'max_temp_c': round(float(temp_avg + np.random.uniform(5.5, 8.5)), 1),
+                    'avg_humidity_pct': round(float(np.clip(humidity, 30, 98)), 1),
+                    'season_rainfall_mm': round(float(max(rainfall, 5.0)), 1),
+                    'solar_radiation_mj_m2': round(float(solar_rad), 1)
+                })
 
-for _, field in df_farmers.iterrows():
-    fld_id = field['field_id']
-    district = field['district']
-    stype = field['soil_type']
-    irrig = field['irrigation_source']
-    area = field['area_hectares']
-    
-    # 5 years of observations: 2021 to 2025
-    for yr in range(2021, 2026):
-        # Determine crops grown this year on this field
-        crops_this_year = []
-        if field['kharif_crop']:
-            crops_this_year.append((field['kharif_crop'], 'Kharif (Monsoon)'))
-        if field['rabi_crop']:
-            crops_this_year.append((field['rabi_crop'], 'Rabi (Winter)'))
+    df_weather = pd.DataFrame(weather_data)
+    df_weather.to_csv(os.path.join(raw_dir, 'weather_climate_data.csv'), index=False)
+    print(f" Saved weather_climate_data.csv ({len(df_weather)} rows) [SIMULATED]")
+
+    # 3. Crop Master Dataset
+    df_crop_master = pd.DataFrame(CROPS_MASTER)
+    df_crop_master.to_csv(os.path.join(raw_dir, 'crop_master_data.csv'), index=False)
+    print(f" Saved crop_master_data.csv ({len(df_crop_master)} crops) [SIMULATED]")
+
+    # 4. Farmer & Farm Registry Dataset
+    farm_field_records = []
+    field_idx = 1
+    ROTATION_TYPES = [
+        {'kharif': 'Rice (Paddy)', 'rabi': 'Wheat'},
+        {'kharif': 'Maize', 'rabi': 'Chickpea'},
+        {'kharif': 'Maize', 'rabi': 'Mustard'},
+        {'kharif': 'Cotton (Seed Cotton)', 'rabi': None},
+        {'kharif': 'Maize', 'rabi': 'Potato'}
+    ]
+
+    for f_id in range(1, 151):
+        district = DISTRICTS[f_id % len(DISTRICTS)]
+        farm_id = f'FARM_{f_id:04d}'
+        num_fields = 2
+        
+        for fld in range(1, num_fields + 1):
+            fld_id = f'FLD_{field_idx:05d}'
+            rot = ROTATION_TYPES[(field_idx - 1) % len(ROTATION_TYPES)]
+            field_idx += 1
             
-        for crop_name, season in crops_this_year:
-            crop_info = crops_lookup[crop_name]
-            base_yield = crop_info['base_potential_yield_t_ha']
+            area_ha = round(float(1.0 + ((fld_id.__hash__() % 30) / 10.0)), 2)
+            stype = SOIL_TYPES[(field_idx) % len(SOIL_TYPES)]
+            irrig = ['Tube Well (Canal / Groundwater)', 'Drip Irrigation', 'Sprinkler', 'Rainfed (No source)'][field_idx % 4]
             
-            # Lookup actual seasonal weather
-            w_rec = weather_dict.get((district, yr, season))
-            if w_rec is None:
-                continue
-            
-            season_rainfall = w_rec['season_rainfall_mm']
-            avg_temp = w_rec['avg_temp_c']
-            
-            # Irrigation water contribution (mm)
-            if 'Drip' in irrig:
-                irrig_water_mm = 380.0
-                irrig_efficiency_factor = 1.10
-            elif 'Tube Well' in irrig:
-                irrig_water_mm = 340.0
-                irrig_efficiency_factor = 1.02
-            elif 'Sprinkler' in irrig:
-                irrig_water_mm = 280.0
-                irrig_efficiency_factor = 1.05
-            else: # Rainfed
-                irrig_water_mm = 0.0
-                irrig_efficiency_factor = 0.75
-                
-            total_water_available = season_rainfall + irrig_water_mm
-            
-            # 1. Water Stress / Adequacy Factor
-            opt_water = crop_info['opt_water_req_mm']
-            min_water = crop_info['min_water_req_mm']
-            if total_water_available >= opt_water:
-                water_factor = 1.0 + min(0.08, (total_water_available - opt_water) / opt_water * 0.1)
-            elif total_water_available >= min_water:
-                water_factor = 0.85 + (total_water_available - min_water) / (opt_water - min_water) * 0.15
-            else: # Below minimum requirement
-                deficit_ratio = (min_water - total_water_available) / min_water
-                water_factor = max(0.40, 0.85 - (deficit_ratio * 0.60))
-                
-            # 2. Temperature Stress Factor
-            temp_factor = 1.0
-            if crop_info['crop_id'] == 'wheat':
-                # Terminal heat stress: Wheat yields drop significantly if temp exceeds 21°C during grain filling
-                if avg_temp > 21.0:
-                    temp_factor -= (avg_temp - 21.0) * 0.04 # 4% penalty per deg above 21C
-            elif crop_info['crop_id'] == 'rice':
-                # Rice prefers warm conditions; penalty if avg temp is too low (<24C)
-                if avg_temp < 25.0:
-                    temp_factor -= (25.0 - avg_temp) * 0.03
-            temp_factor = max(0.65, min(1.08, temp_factor))
-            
-            # 3. Soil Type Affinity Factor
-            soil_factor = 1.04 if stype in crop_info['preferred_soil'] else 0.92
-            
-            # 4. Realistic natural variation (std dev 5%)
-            natural_noise = np.random.normal(1.0, 0.05)
-            
-            # Final simulated yield
-            actual_yield = base_yield * irrig_efficiency_factor * water_factor * temp_factor * soil_factor * natural_noise
-            actual_yield = round(float(max(0.2, actual_yield)), 2)
-            total_production = round(float(actual_yield * area), 2)
-            
-            yield_records.append({
-                'yield_record_id': f'YLD_{rec_id:06d}',
+            farm_field_records.append({
+                'farmer_id': f'FMR_{f_id:04d}',
+                'farm_id': farm_id,
                 'field_id': fld_id,
                 'district': district,
-                'crop_id': crop_info['crop_id'],
-                'crop_name': crop_name,
-                'year': yr,
-                'season': season,
+                'area_hectares': area_ha,
                 'soil_type': stype,
                 'irrigation_source': irrig,
-                'field_area_ha': area,
-                'actual_yield_tonnes_per_ha': actual_yield,
-                'total_production_tonnes': total_production
+                'kharif_crop': rot['kharif'],
+                'rabi_crop': rot['rabi'],
+                'active_data_mode': 'manual'
             })
-            rec_id += 1
 
-df_yield = pd.DataFrame(yield_records)
-df_yield.to_csv(os.path.join(RAW_DIR, 'historical_yield_data.csv'), index=False)
-print(f" Saved historical_yield_data.csv ({len(df_yield)} rows) [SIMULATED]")
+    df_farmers = pd.DataFrame(farm_field_records)
+    df_farmers.to_csv(os.path.join(raw_dir, 'farmer_field_records.csv'), index=False)
+    print(f" Saved farmer_field_records.csv ({len(df_farmers)} fields across 150 farms) [SIMULATED]")
 
-print("\nSimulated agricultural datasets generation finished successfully.")
+    # 5. Historical Yield Observations Dataset
+    yield_records = []
+    rec_id = 1
+    crops_lookup = {c['crop_name']: c for c in CROPS_MASTER}
+    weather_dict = {(w['district'], w['year'], w['season']): w for _, w in df_weather.iterrows()}
+
+    for _, field in df_farmers.iterrows():
+        fld_id = field['field_id']
+        district = field['district']
+        stype = field['soil_type']
+        irrig = field['irrigation_source']
+        area = field['area_hectares']
+        
+        for yr in range(2021, 2026):
+            crops_this_year = []
+            if field['kharif_crop']:
+                crops_this_year.append((field['kharif_crop'], 'Kharif (Monsoon)'))
+            if field['rabi_crop']:
+                crops_this_year.append((field['rabi_crop'], 'Rabi (Winter)'))
+                
+            for crop_name, season in crops_this_year:
+                crop_info = crops_lookup[crop_name]
+                base_yield = crop_info['base_potential_yield_t_ha']
+                
+                w_rec = weather_dict.get((district, yr, season))
+                if w_rec is None:
+                    continue
+                
+                season_rainfall = w_rec['season_rainfall_mm']
+                avg_temp = w_rec['avg_temp_c']
+                
+                if 'Drip' in irrig:
+                    irrig_water_mm = 380.0
+                    irrig_efficiency_factor = 1.10
+                elif 'Tube Well' in irrig:
+                    irrig_water_mm = 340.0
+                    irrig_efficiency_factor = 1.02
+                elif 'Sprinkler' in irrig:
+                    irrig_water_mm = 280.0
+                    irrig_efficiency_factor = 1.05
+                else:
+                    irrig_water_mm = 0.0
+                    irrig_efficiency_factor = 0.75
+                    
+                total_water_available = season_rainfall + irrig_water_mm
+                
+                min_water = crop_info['min_water_req_mm']
+                opt_water = crop_info['opt_water_req_mm']
+                
+                if total_water_available >= opt_water:
+                    water_factor = 1.0 + min(0.08, (total_water_available - opt_water) / opt_water * 0.1)
+                elif total_water_available >= min_water:
+                    water_factor = 0.85 + (total_water_available - min_water) / (opt_water - min_water) * 0.15
+                else:
+                    deficit_ratio = (min_water - total_water_available) / min_water
+                    water_factor = max(0.40, 0.85 - (deficit_ratio * 0.60))
+                    
+                temp_factor = 1.0
+                if crop_info['crop_id'] == 'wheat':
+                    if avg_temp > 21.0:
+                        temp_factor -= (avg_temp - 21.0) * 0.04
+                elif crop_info['crop_id'] == 'rice':
+                    if avg_temp < 25.0:
+                        temp_factor -= (25.0 - avg_temp) * 0.03
+                temp_factor = max(0.65, min(1.08, temp_factor))
+                
+                soil_factor = 1.04 if stype in crop_info['preferred_soil'] else 0.92
+                natural_noise = np.random.normal(1.0, 0.05)
+                
+                actual_yield = base_yield * irrig_efficiency_factor * water_factor * temp_factor * soil_factor * natural_noise
+                actual_yield = round(float(max(0.2, actual_yield)), 2)
+                total_production = round(float(actual_yield * area), 2)
+                
+                yield_records.append({
+                    'yield_record_id': f'YLD_{rec_id:06d}',
+                    'field_id': fld_id,
+                    'district': district,
+                    'crop_id': crop_info['crop_id'],
+                    'crop_name': crop_name,
+                    'year': yr,
+                    'season': season,
+                    'soil_type': stype,
+                    'irrigation_source': irrig,
+                    'field_area_ha': area,
+                    'actual_yield_tonnes_per_ha': actual_yield,
+                    'total_production_tonnes': total_production
+                })
+                rec_id += 1
+
+    df_yield = pd.DataFrame(yield_records)
+    df_yield.to_csv(os.path.join(raw_dir, 'historical_yield_data.csv'), index=False)
+    print(f" Saved historical_yield_data.csv ({len(df_yield)} rows) [SIMULATED]")
+
+    print("\nSimulated agricultural datasets generation finished successfully.")
+
+if __name__ == '__main__':
+    generate_datasets()

@@ -29,29 +29,41 @@ All modules are strictly separated into dedicated directories:
 ```
 FarmSphere/
 ├── datasets/                            # Agricultural Datasets
-│   ├── raw/                             # Independent raw datasets (Soil, Weather, Crops, Yield, Farmers)
+│   ├── raw/                             # Raw datasets (Soil, Weather, Crops, Yield, Farmers, Kaggle)
 │   ├── processed/                       # Cleaned and integrated datasets ready for ML
-│   └── generate_datasets.py             # ICAR/CIMMYT/FAO benchmark dataset generator
+│   ├── generate_datasets.py             # Calibrated agricultural dataset generator [SIMULATED]
+│   └── DATA_CARD.md                     # Data Card: sources, DES 2022-23 citations & limitations
 │
 ├── ml_models/                           # Machine Learning & Agricultural AI
 │   ├── preprocessing/
-│   │   ├── data_cleaner.py              # Outlier detection, range validation & imputation
-│   │   └── dataset_integrator.py        # Multi-dataset relational integration pipeline
+│   │   ├── data_cleaner.py              # Outlier detection, range validation & mg/kg->kg/ha conversion
+│   │   └── dataset_integrator.py        # Multi-dataset relational integration pipeline (Seeded)
 │   ├── training/
-│   │   ├── train_crop_recommendation.py # Crop Recommendation Model (Random Forest Classifier)
-│   │   ├── train_crop_suitability.py    # Wheat & Rice Field Suitability Engine
-│   │   ├── train_yield_prediction.py    # Crop Yield Regression Model (tonnes/ha & quintals/acre)
-│   │   ├── train_irrigation_advisor.py  # FAO-56 Penman-Monteith Evapotranspiration Engine
-│   │   └── train_fertilizer_engine.py   # ICAR STCR Precision Fertilizer Engine
-│   ├── saved_models/                    # Trained .joblib binaries and evaluation JSONs
-│   ├── evaluation/
-│   │   ├── model_evaluator.py           # Comprehensive evaluation suite
-│   │   └── evaluation_summary.json      # Cross-validation and test scores
-│   ├── explainability/
-│   │   └── explainable_ai.py            # Feature attribution & agronomic interpretation
+│   │   ├── train_crop_recommendation.py # Crop Recommendation Model (Real Kaggle 22-crop dataset)
+│   │   └── train_yield_prediction.py    # Group-Aware Crop Yield Regressor (Field split by field_id)
 │   ├── agronomy/
-│   │   └── engines.py                   # Core calculation classes
-│   └── predict.py                       # Unified prediction CLI & API interface
+│   │   ├── suitability.py               # Deterministic Agronomic Rule Engine (Limiting factors)
+│   │   ├── suitability_config.json      # Biological thresholds across all 7 master crops
+│   │   ├── yield_predictor.py           # Yield predictor with RF tree spread uncertainty
+│   │   └── engines.py                   # Hargreaves-Samani ETo & Nutrient-Balance engines
+│   ├── explainability/
+│   │   └── explainable_ai.py            # Real marginal feature contributions & biological benchmarks
+│   ├── evaluation/
+│   │   ├── split_utils.py               # Shared group split helpers & naive crop-mean baselines
+│   │   ├── model_evaluator.py           # Multi-model evaluation suite on held-out test data
+│   │   └── evaluation_summary.json      # Certified held-out test evaluation metrics
+│   ├── saved_models/                    # Trained models (joblib gitignored) & metric JSONs
+│   ├── model_card_yield.md              # Model Card: Yield predictor architecture, bounds & limits
+│   ├── predict.py                       # Unified prediction CLI (JSON file/stdin/interactive)
+│   └── run_all.py                       # One-command full pipeline rebuild orchestrator
+│
+├── tests/                               # Comprehensive Pytest Verification Suite
+│   ├── test_reproducibility.py          # Determinism test (identical CSV checksums on re-run)
+│   ├── test_validation.py               # Input validation, OOD detection & rejection of absurd inputs
+│   ├── test_evaluator.py                # Split disjointness & verification that train rows are never in test
+│   ├── test_suitability.py              # Rule engine verification & limiting factor checks
+│   ├── test_yield.py                    # Yield uncertainty range & unsupported crop error checks
+│   └── test_agronomy.py                 # Hand-calculated expected values for irrigation and fertilizer
 │
 ├── backend/                             # Firebase Backend & Hardware Ingestion
 │   ├── firebase/
@@ -70,34 +82,51 @@ FarmSphere/
 
 ## 🧪 3. Machine Learning Models & Evaluation Metrics
 
-| Model Module | Algorithm | Evaluation Metric | Score | Status |
+> **Data Provenance & Evaluation Integrity Disclosure:**  
+> - **Simulation:** Field harvest, soil testing, and weather CSVs are **simulated**, calibrated against the Directorate of Economics and Statistics (DES 2022–23) Indian national crop averages and ICAR guidelines (see [`datasets/DATA_CARD.md`](datasets/DATA_CARD.md)).
+> - **Real Data:** The crop recommendation classifier is trained on the real Kaggle 22-crop agricultural dataset (`Crop_recommendation.csv`).
+> - **Evaluation Protocol:** Every reported metric is computed strictly on **unseen, held-out test splits** (stratified split for recommendation, `GroupShuffleSplit` by `field_id` for yield to prevent field-level leakage). Training set scores are never presented as test metrics.
+
+| Model Module | Algorithm & Method | Held-Out Evaluation Metric | Score | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Crop Recommendation** | Random Forest Classifier (100 Trees) | **Accuracy**<br>**F1-Score** | **98.62%**<br>**98.63%** | ✅ PASSED |
-| **Wheat Suitability** | Dual Random Forest (Regressor + Classifier) | **R² Score**<br>**Class Accuracy** | **0.9654**<br>**95.55%** | ✅ PASSED |
-| **Rice Suitability** | Dual Random Forest (Regressor + Classifier) | **R² Score**<br>**Class Accuracy** | **0.9512**<br>**97.55%** | ✅ PASSED |
-| **Yield Prediction** | One-Hot Pipeline + RF Regressor | **R² Score**<br>**MAE** | **0.9954**<br>**0.26 tonnes/ha** | ✅ PASSED |
-| **Irrigation Advisor** | FAO-56 Penman-Monteith ($ET_c = ET_o \times K_c$) | Deficit (mm)<br>Pump Runtime | Calculated dynamically | ✅ PASSED |
-| **Fertilizer Engine** | ICAR Soil Test Crop Response (STCR) | Bags (50kg)<br>3-Stage Splits | Exact kg Urea, DAP, MOP | ✅ PASSED |
+| **Crop Recommendation** | Random Forest Classifier (22 Crops, Stratified 80/20) | **Test Accuracy**<br>**Macro-F1** | **99.55%**<br>**99.54%** | ✅ PASSED |
+| **Crop Suitability** | Deterministic Agronomic Rule Engine (`suitability.py`) | **Limiting Factors**<br>**Coverage** | **Biological Score (0-100)**<br>**All 7 Master Crops** | ✅ VERIFIED |
+| **Yield Prediction** | Random Forest Regressor (Group Split by `field_id`) | **Held-Out Test R²**<br>**Held-Out MAE**<br>**Within-Crop R²**<br>*(Naive Baseline R²)* | **0.9948**<br>**0.158 t/ha**<br>**0.9791**<br>*(0.6876)* | ✅ PASSED |
+| **Irrigation Advisor** | Hargreaves-Samani ETo & Volumetric Soil Depletion | Water Deficit (mm)<br>Pump Runtime | Dynamically calculated | ✅ PASSED |
+| **Fertilizer Engine** | Nutrient-Balance Estimate (1 mg/kg = 2.0 kg/ha furrow slice) | Commercial Bags (50kg)<br>Growth-Stage Splits | Exact Urea, DAP, MOP | ✅ PASSED |
 
 ---
 
 ## 🚀 4. How to Run & Test
 
-### Run Complete Field Intelligence Prediction
+### One-Command Full Pipeline Rebuild & Reproduction
+Re-runs dataset generation, cleaning, multi-source integration, model training, evaluation, and README synchronization:
 ```bash
-python ml_models/predict.py
+python -m ml_models.run_all
 ```
 
-### Run Multi-Model Testing & Evaluation Suite
+### Run Pytest Verification Suite
+Runs all 23 unit tests across determinism, agronomic physics, validation, and evaluation integrity:
 ```bash
-python ml_models/evaluation/model_evaluator.py
+pytest
 ```
 
-### Run Data Preprocessing & Multi-Dataset Integration
+### Run Field Intelligence Prediction CLI
+Accepts direct JSON payload via argument or standard input:
 ```bash
-python datasets/generate_datasets.py
-python ml_models/preprocessing/data_cleaner.py
-python ml_models/preprocessing/dataset_integrator.py
+# 1. Run demonstration sample:
+python -m ml_models.predict
+
+# 2. Run with a custom JSON input file:
+python -m ml_models.predict path/to/field_input.json
+
+# 3. Stream JSON via stdin (for backend integration):
+cat field_input.json | python -m ml_models.predict -
+```
+
+### Run Held-Out Model Evaluation Suite
+```bash
+python -m ml_models.evaluation.model_evaluator
 ```
 
 ### Run IoT Telemetry Simulation

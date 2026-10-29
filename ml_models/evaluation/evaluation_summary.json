@@ -1,15 +1,15 @@
 {
   "system": "FarmSphere AI Level 3 Smart Agriculture Platform",
-  "evaluation_date": "2026-10-29 14:55:37",
+  "evaluation_date": "2026-10-29 15:19:50",
   "evaluation_protocol": "Held-out test set evaluation with group-aware splitting and naive baseline benchmarking",
   "random_state": 42,
   "models": {
     "crop_recommendation": {
       "algorithm": "Random Forest",
-      "total_samples": 2400,
-      "train_samples": 1920,
-      "test_samples": 480,
-      "num_classes": 8,
+      "total_samples": 2200,
+      "train_samples": 1760,
+      "test_samples": 440,
+      "num_classes": 22,
       "features": [
         "N",
         "P",
@@ -19,83 +19,68 @@
         "ph",
         "rainfall"
       ],
-      "5_fold_cv_accuracy_mean": 0.9318,
-      "5_fold_cv_accuracy_std": 0.0091,
+      "5_fold_cv_accuracy_mean": 0.9949,
+      "5_fold_cv_accuracy_std": 0.0038,
       "train_metrics": {
-        "accuracy": 0.9292,
-        "precision_weighted": 0.93,
-        "recall_weighted": 0.9292,
-        "f1_weighted": 0.9295
+        "accuracy": 1.0,
+        "precision_weighted": 1.0,
+        "recall_weighted": 1.0,
+        "f1_weighted": 1.0
       },
       "test_metrics_held_out": {
-        "accuracy": 0.9313,
-        "precision_weighted": 0.9324,
-        "recall_weighted": 0.9313,
-        "f1_weighted": 0.9314,
-        "macro_f1": 0.9314
+        "accuracy": 0.9955,
+        "precision_weighted": 0.9959,
+        "recall_weighted": 0.9955,
+        "f1_weighted": 0.9954,
+        "macro_f1": 0.9954
       },
       "naive_baseline": {
         "type": "Uniform Random Guessing",
-        "expected_accuracy": 0.125
+        "expected_accuracy": 0.0455
       },
-      "generalization_gap": -0.0021,
+      "generalization_gap": 0.0045,
       "status": "PASSED"
     },
     "crop_suitability": {
-      "Wheat": {
-        "total_samples": 2200,
-        "train_samples": 1760,
-        "test_samples": 440,
-        "train_r2_score": 0.9805,
-        "test_r2_held_out": 0.9091,
-        "test_mae_held_out": 3.09,
-        "test_class_accuracy_held_out": 84.09,
-        "status": "PASSED"
-      },
-      "Rice (Paddy)": {
-        "total_samples": 2200,
-        "train_samples": 1760,
-        "test_samples": 440,
-        "train_r2_score": 0.9757,
-        "test_r2_held_out": 0.8528,
-        "test_mae_held_out": 4.91,
-        "test_class_accuracy_held_out": 90.0,
-        "status": "PASSED"
-      }
+      "type": "Deterministic Agronomic Rule Engine",
+      "engine_module": "ml_models.agronomy.suitability.CropSuitabilityEngine",
+      "coverage": "All 7 master crops (Wheat, Rice, Maize, Cotton, Chickpea, Mustard, Potato)",
+      "limiting_factors_explained": true,
+      "verified_by": "tests/test_suitability.py",
+      "status": "PASSED"
     },
     "yield_prediction": {
       "algorithm": "RandomForestRegressor Pipeline (Group-Aware Split by field_id)",
-      "total_samples": 5083,
-      "train_samples": 4063,
-      "test_samples": 1020,
-      "unique_fields_total": 299,
+      "total_samples": 2700,
+      "train_samples": 2160,
+      "test_samples": 540,
+      "unique_fields_total": 300,
       "features": [
         "crop_name",
         "soil_type",
         "irrigation_source",
-        "field_area_ha",
         "season",
         "avg_temp_c",
         "season_rainfall_mm",
         "avg_humidity_pct"
       ],
       "train_metrics": {
-        "r2_score": 0.9953,
-        "mae_tonnes_per_ha": 0.26
+        "r2_score": 0.998,
+        "mae_tonnes_per_ha": 0.112
       },
       "test_metrics_held_out": {
-        "r2_score": 0.9956,
-        "mae_tonnes_per_ha": 0.26,
-        "rmse_tonnes_per_ha": 0.505,
-        "mape_pct": 4.62
+        "r2_score": 0.9948,
+        "mae_tonnes_per_ha": 0.158,
+        "rmse_tonnes_per_ha": 0.311,
+        "mape_pct": 4.54
       },
       "naive_crop_mean_baseline": {
         "description": "Predicts training crop-mean yield for each crop in test set",
-        "baseline_r2": 0.9507,
-        "baseline_mae_tonnes_per_ha": 0.835,
-        "baseline_rmse_tonnes_per_ha": 1.682
+        "baseline_r2": 0.6876,
+        "baseline_mae_tonnes_per_ha": 1.05,
+        "baseline_rmse_tonnes_per_ha": 2.4
       },
-      "within_crop_r2": 0.9093,
+      "within_crop_r2": 0.9791,
       "beats_naive_baseline": true,
       "status": "PASSED"
     }

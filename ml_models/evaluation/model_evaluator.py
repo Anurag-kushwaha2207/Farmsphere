@@ -202,9 +202,9 @@ def evaluate_all_models():
         pipe = joblib.load(yield_path)
         df_yield = pd.read_csv(os.path.join(PROCESSED_DIR, 'yield_prediction_clean.csv'))
         
-        # Feature columns excluding target, alternative units, and field_id
-        non_features = ['field_id', 'actual_yield_tonnes_per_ha', 'actual_yield_quintals_per_acre']
-        feature_cols = [c for c in df_yield.columns if c not in non_features]
+        # Feature columns excluding target, alternative units, field_id, and dropped field_area_ha
+        non_features = ['field_id', 'field_area_ha', 'actual_yield_tonnes_per_ha', 'actual_yield_quintals_per_acre']
+        feature_cols = getattr(pipe, 'feature_cols_', [c for c in df_yield.columns if c not in non_features])
         
         # Group-aware split by field_id
         train_df, test_df = get_yield_group_splits(df_yield, test_size=0.20, random_state=RANDOM_STATE, group_col='field_id')

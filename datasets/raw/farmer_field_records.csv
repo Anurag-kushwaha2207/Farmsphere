@@ -1,301 +1,301 @@
 farmer_id,farm_id,field_id,district,area_hectares,soil_type,irrigation_source,kharif_crop,rabi_crop,active_data_mode
-FMR_0001,FARM_0001,FLD_00001,"Varanasi, UP",2.8,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0001,FARM_0001,FLD_00002,"Varanasi, UP",2.9,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0002,FARM_0002,FLD_00003,"Meerut, UP",3.6,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0002,FARM_0002,FLD_00004,"Meerut, UP",2.4,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0003,FARM_0003,FLD_00005,"Karnal, Haryana",2.8,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0003,FARM_0003,FLD_00006,"Karnal, Haryana",3.0,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0004,FARM_0004,FLD_00007,"Ludhiana, Punjab",1.1,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0004,FARM_0004,FLD_00008,"Ludhiana, Punjab",1.7,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0005,FARM_0005,FLD_00009,"Patna, Bihar",1.1,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0005,FARM_0005,FLD_00010,"Patna, Bihar",1.1,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0006,FARM_0006,FLD_00011,"Samastipur, Bihar",2.1,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0006,FARM_0006,FLD_00012,"Samastipur, Bihar",1.2,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0007,FARM_0007,FLD_00013,"Bhopal, MP",2.4,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0007,FARM_0007,FLD_00014,"Bhopal, MP",3.4,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
-FMR_0008,FARM_0008,FLD_00015,"Indore, MP",3.4,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0008,FARM_0008,FLD_00016,"Indore, MP",3.2,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0009,FARM_0009,FLD_00017,"Nagpur, Maharashtra",2.9,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0009,FARM_0009,FLD_00018,"Nagpur, Maharashtra",2.0,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0010,FARM_0010,FLD_00019,"Ahmedabad, Gujarat",2.3,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0010,FARM_0010,FLD_00020,"Ahmedabad, Gujarat",2.6,Clay Loam,Drip Irrigation,Maize,Potato,manual
-FMR_0011,FARM_0011,FLD_00021,"Guntur, AP",1.5,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0011,FARM_0011,FLD_00022,"Guntur, AP",1.3,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0012,FARM_0012,FLD_00023,"Bareilly, UP",1.2,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0012,FARM_0012,FLD_00024,"Bareilly, UP",2.1,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0013,FARM_0013,FLD_00025,"Varanasi, UP",2.3,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0013,FARM_0013,FLD_00026,"Varanasi, UP",1.0,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0014,FARM_0014,FLD_00027,"Meerut, UP",1.7,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0014,FARM_0014,FLD_00028,"Meerut, UP",3.1,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0015,FARM_0015,FLD_00029,"Karnal, Haryana",2.9,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0015,FARM_0015,FLD_00030,"Karnal, Haryana",2.6,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0016,FARM_0016,FLD_00031,"Ludhiana, Punjab",2.3,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0016,FARM_0016,FLD_00032,"Ludhiana, Punjab",3.6,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0017,FARM_0017,FLD_00033,"Patna, Bihar",3.5,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0017,FARM_0017,FLD_00034,"Patna, Bihar",1.7,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
-FMR_0018,FARM_0018,FLD_00035,"Samastipur, Bihar",1.3,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0018,FARM_0018,FLD_00036,"Samastipur, Bihar",2.6,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0019,FARM_0019,FLD_00037,"Bhopal, MP",3.8,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0019,FARM_0019,FLD_00038,"Bhopal, MP",2.6,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0020,FARM_0020,FLD_00039,"Indore, MP",2.7,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0020,FARM_0020,FLD_00040,"Indore, MP",3.1,Clay Loam,Drip Irrigation,Maize,Potato,manual
-FMR_0021,FARM_0021,FLD_00041,"Nagpur, Maharashtra",1.3,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0021,FARM_0021,FLD_00042,"Nagpur, Maharashtra",2.9,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0022,FARM_0022,FLD_00043,"Ahmedabad, Gujarat",1.9,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0022,FARM_0022,FLD_00044,"Ahmedabad, Gujarat",2.1,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0023,FARM_0023,FLD_00045,"Guntur, AP",2.6,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0023,FARM_0023,FLD_00046,"Guntur, AP",1.9,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0024,FARM_0024,FLD_00047,"Bareilly, UP",3.2,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0024,FARM_0024,FLD_00048,"Bareilly, UP",3.9,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0025,FARM_0025,FLD_00049,"Varanasi, UP",2.3,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0025,FARM_0025,FLD_00050,"Varanasi, UP",3.1,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0026,FARM_0026,FLD_00051,"Meerut, UP",1.8,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0026,FARM_0026,FLD_00052,"Meerut, UP",3.5,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0027,FARM_0027,FLD_00053,"Karnal, Haryana",3.9,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0027,FARM_0027,FLD_00054,"Karnal, Haryana",3.4,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0001,FARM_0001,FLD_00001,"Varanasi, UP",3.0,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0001,FARM_0001,FLD_00002,"Varanasi, UP",1.9,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0002,FARM_0002,FLD_00003,"Meerut, UP",1.3,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0002,FARM_0002,FLD_00004,"Meerut, UP",2.9,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0003,FARM_0003,FLD_00005,"Karnal, Haryana",2.0,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0003,FARM_0003,FLD_00006,"Karnal, Haryana",1.1,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0004,FARM_0004,FLD_00007,"Ludhiana, Punjab",3.0,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0004,FARM_0004,FLD_00008,"Ludhiana, Punjab",3.9,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0005,FARM_0005,FLD_00009,"Patna, Bihar",1.8,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0005,FARM_0005,FLD_00010,"Patna, Bihar",3.7,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0006,FARM_0006,FLD_00011,"Samastipur, Bihar",2.2,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0006,FARM_0006,FLD_00012,"Samastipur, Bihar",1.4,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0007,FARM_0007,FLD_00013,"Bhopal, MP",2.1,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0007,FARM_0007,FLD_00014,"Bhopal, MP",3.9,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0008,FARM_0008,FLD_00015,"Indore, MP",2.4,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
+FMR_0008,FARM_0008,FLD_00016,"Indore, MP",2.1,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0009,FARM_0009,FLD_00017,"Nagpur, Maharashtra",1.9,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0009,FARM_0009,FLD_00018,"Nagpur, Maharashtra",3.7,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0010,FARM_0010,FLD_00019,"Ahmedabad, Gujarat",2.9,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0010,FARM_0010,FLD_00020,"Ahmedabad, Gujarat",3.7,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0011,FARM_0011,FLD_00021,"Guntur, AP",2.3,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0011,FARM_0011,FLD_00022,"Guntur, AP",2.0,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0012,FARM_0012,FLD_00023,"Bareilly, UP",2.5,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0012,FARM_0012,FLD_00024,"Bareilly, UP",1.1,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0013,FARM_0013,FLD_00025,"Varanasi, UP",1.3,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0013,FARM_0013,FLD_00026,"Varanasi, UP",2.6,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0014,FARM_0014,FLD_00027,"Meerut, UP",2.9,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0014,FARM_0014,FLD_00028,"Meerut, UP",3.5,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0015,FARM_0015,FLD_00029,"Karnal, Haryana",1.9,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0015,FARM_0015,FLD_00030,"Karnal, Haryana",2.1,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0016,FARM_0016,FLD_00031,"Ludhiana, Punjab",1.0,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0016,FARM_0016,FLD_00032,"Ludhiana, Punjab",1.5,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0017,FARM_0017,FLD_00033,"Patna, Bihar",3.8,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0017,FARM_0017,FLD_00034,"Patna, Bihar",3.3,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0018,FARM_0018,FLD_00035,"Samastipur, Bihar",3.8,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
+FMR_0018,FARM_0018,FLD_00036,"Samastipur, Bihar",3.0,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0019,FARM_0019,FLD_00037,"Bhopal, MP",1.4,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0019,FARM_0019,FLD_00038,"Bhopal, MP",1.1,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0020,FARM_0020,FLD_00039,"Indore, MP",2.6,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0020,FARM_0020,FLD_00040,"Indore, MP",1.3,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0021,FARM_0021,FLD_00041,"Nagpur, Maharashtra",2.7,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0021,FARM_0021,FLD_00042,"Nagpur, Maharashtra",3.9,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0022,FARM_0022,FLD_00043,"Ahmedabad, Gujarat",2.9,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0022,FARM_0022,FLD_00044,"Ahmedabad, Gujarat",2.4,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0023,FARM_0023,FLD_00045,"Guntur, AP",3.6,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0023,FARM_0023,FLD_00046,"Guntur, AP",1.8,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0024,FARM_0024,FLD_00047,"Bareilly, UP",2.1,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0024,FARM_0024,FLD_00048,"Bareilly, UP",3.0,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0025,FARM_0025,FLD_00049,"Varanasi, UP",1.8,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0025,FARM_0025,FLD_00050,"Varanasi, UP",2.3,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0026,FARM_0026,FLD_00051,"Meerut, UP",3.7,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0026,FARM_0026,FLD_00052,"Meerut, UP",2.4,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0027,FARM_0027,FLD_00053,"Karnal, Haryana",1.9,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0027,FARM_0027,FLD_00054,"Karnal, Haryana",3.0,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
 FMR_0028,FARM_0028,FLD_00055,"Ludhiana, Punjab",1.8,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0028,FARM_0028,FLD_00056,"Ludhiana, Punjab",3.7,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0029,FARM_0029,FLD_00057,"Patna, Bihar",3.5,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0029,FARM_0029,FLD_00058,"Patna, Bihar",2.8,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0030,FARM_0030,FLD_00059,"Samastipur, Bihar",1.5,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0030,FARM_0030,FLD_00060,"Samastipur, Bihar",2.1,Clay Loam,Drip Irrigation,Maize,Potato,manual
-FMR_0031,FARM_0031,FLD_00061,"Bhopal, MP",3.9,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0031,FARM_0031,FLD_00062,"Bhopal, MP",3.2,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0032,FARM_0032,FLD_00063,"Indore, MP",1.7,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0032,FARM_0032,FLD_00064,"Indore, MP",1.8,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0033,FARM_0033,FLD_00065,"Nagpur, Maharashtra",1.5,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0033,FARM_0033,FLD_00066,"Nagpur, Maharashtra",1.6,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0034,FARM_0034,FLD_00067,"Ahmedabad, Gujarat",3.6,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0034,FARM_0034,FLD_00068,"Ahmedabad, Gujarat",1.9,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0035,FARM_0035,FLD_00069,"Guntur, AP",1.7,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0035,FARM_0035,FLD_00070,"Guntur, AP",3.2,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0036,FARM_0036,FLD_00071,"Bareilly, UP",2.9,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0036,FARM_0036,FLD_00072,"Bareilly, UP",3.2,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0037,FARM_0037,FLD_00073,"Varanasi, UP",1.0,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0037,FARM_0037,FLD_00074,"Varanasi, UP",3.6,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
-FMR_0038,FARM_0038,FLD_00075,"Meerut, UP",2.9,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
+FMR_0028,FARM_0028,FLD_00056,"Ludhiana, Punjab",2.8,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0029,FARM_0029,FLD_00057,"Patna, Bihar",3.1,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0029,FARM_0029,FLD_00058,"Patna, Bihar",1.3,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0030,FARM_0030,FLD_00059,"Samastipur, Bihar",3.4,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0030,FARM_0030,FLD_00060,"Samastipur, Bihar",3.7,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0031,FARM_0031,FLD_00061,"Bhopal, MP",2.4,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0031,FARM_0031,FLD_00062,"Bhopal, MP",2.4,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0032,FARM_0032,FLD_00063,"Indore, MP",3.6,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0032,FARM_0032,FLD_00064,"Indore, MP",2.7,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0033,FARM_0033,FLD_00065,"Nagpur, Maharashtra",1.3,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0033,FARM_0033,FLD_00066,"Nagpur, Maharashtra",3.5,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0034,FARM_0034,FLD_00067,"Ahmedabad, Gujarat",3.3,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0034,FARM_0034,FLD_00068,"Ahmedabad, Gujarat",2.4,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0035,FARM_0035,FLD_00069,"Guntur, AP",3.4,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0035,FARM_0035,FLD_00070,"Guntur, AP",3.8,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0036,FARM_0036,FLD_00071,"Bareilly, UP",2.0,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0036,FARM_0036,FLD_00072,"Bareilly, UP",3.1,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0037,FARM_0037,FLD_00073,"Varanasi, UP",3.5,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0037,FARM_0037,FLD_00074,"Varanasi, UP",1.7,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0038,FARM_0038,FLD_00075,"Meerut, UP",3.2,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
 FMR_0038,FARM_0038,FLD_00076,"Meerut, UP",2.6,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0039,FARM_0039,FLD_00077,"Karnal, Haryana",3.3,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0039,FARM_0039,FLD_00078,"Karnal, Haryana",3.1,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0040,FARM_0040,FLD_00079,"Ludhiana, Punjab",3.5,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0040,FARM_0040,FLD_00080,"Ludhiana, Punjab",1.2,Clay Loam,Drip Irrigation,Maize,Potato,manual
-FMR_0041,FARM_0041,FLD_00081,"Patna, Bihar",2.4,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0041,FARM_0041,FLD_00082,"Patna, Bihar",1.6,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0042,FARM_0042,FLD_00083,"Samastipur, Bihar",1.7,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0042,FARM_0042,FLD_00084,"Samastipur, Bihar",3.7,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0043,FARM_0043,FLD_00085,"Bhopal, MP",3.5,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0043,FARM_0043,FLD_00086,"Bhopal, MP",3.6,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0044,FARM_0044,FLD_00087,"Indore, MP",3.1,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0044,FARM_0044,FLD_00088,"Indore, MP",1.9,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0045,FARM_0045,FLD_00089,"Nagpur, Maharashtra",2.9,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0045,FARM_0045,FLD_00090,"Nagpur, Maharashtra",2.7,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0046,FARM_0046,FLD_00091,"Ahmedabad, Gujarat",3.3,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0046,FARM_0046,FLD_00092,"Ahmedabad, Gujarat",3.7,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0047,FARM_0047,FLD_00093,"Guntur, AP",1.8,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0047,FARM_0047,FLD_00094,"Guntur, AP",2.6,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
-FMR_0048,FARM_0048,FLD_00095,"Bareilly, UP",3.4,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0048,FARM_0048,FLD_00096,"Bareilly, UP",2.6,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0049,FARM_0049,FLD_00097,"Varanasi, UP",3.2,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0049,FARM_0049,FLD_00098,"Varanasi, UP",3.2,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0050,FARM_0050,FLD_00099,"Meerut, UP",2.7,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0050,FARM_0050,FLD_00100,"Meerut, UP",2.9,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0039,FARM_0039,FLD_00077,"Karnal, Haryana",3.0,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0039,FARM_0039,FLD_00078,"Karnal, Haryana",3.6,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0040,FARM_0040,FLD_00079,"Ludhiana, Punjab",3.3,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0040,FARM_0040,FLD_00080,"Ludhiana, Punjab",3.9,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0041,FARM_0041,FLD_00081,"Patna, Bihar",2.0,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0041,FARM_0041,FLD_00082,"Patna, Bihar",2.1,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0042,FARM_0042,FLD_00083,"Samastipur, Bihar",3.5,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0042,FARM_0042,FLD_00084,"Samastipur, Bihar",3.1,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0043,FARM_0043,FLD_00085,"Bhopal, MP",2.2,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0043,FARM_0043,FLD_00086,"Bhopal, MP",3.4,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0044,FARM_0044,FLD_00087,"Indore, MP",2.4,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0044,FARM_0044,FLD_00088,"Indore, MP",1.0,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0045,FARM_0045,FLD_00089,"Nagpur, Maharashtra",1.7,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0045,FARM_0045,FLD_00090,"Nagpur, Maharashtra",3.2,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0046,FARM_0046,FLD_00091,"Ahmedabad, Gujarat",3.5,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0046,FARM_0046,FLD_00092,"Ahmedabad, Gujarat",3.9,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0047,FARM_0047,FLD_00093,"Guntur, AP",3.7,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0047,FARM_0047,FLD_00094,"Guntur, AP",2.2,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0048,FARM_0048,FLD_00095,"Bareilly, UP",3.2,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
+FMR_0048,FARM_0048,FLD_00096,"Bareilly, UP",2.5,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0049,FARM_0049,FLD_00097,"Varanasi, UP",1.4,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0049,FARM_0049,FLD_00098,"Varanasi, UP",2.5,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0050,FARM_0050,FLD_00099,"Meerut, UP",1.1,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0050,FARM_0050,FLD_00100,"Meerut, UP",3.3,Clay Loam,Drip Irrigation,Maize,Potato,manual
 FMR_0051,FARM_0051,FLD_00101,"Karnal, Haryana",1.7,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0051,FARM_0051,FLD_00102,"Karnal, Haryana",3.6,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0052,FARM_0052,FLD_00103,"Ludhiana, Punjab",2.4,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0051,FARM_0051,FLD_00102,"Karnal, Haryana",1.0,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0052,FARM_0052,FLD_00103,"Ludhiana, Punjab",2.6,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
 FMR_0052,FARM_0052,FLD_00104,"Ludhiana, Punjab",3.3,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0053,FARM_0053,FLD_00105,"Patna, Bihar",2.0,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0053,FARM_0053,FLD_00106,"Patna, Bihar",3.0,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0054,FARM_0054,FLD_00107,"Samastipur, Bihar",2.7,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0054,FARM_0054,FLD_00108,"Samastipur, Bihar",3.8,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0055,FARM_0055,FLD_00109,"Bhopal, MP",2.2,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0055,FARM_0055,FLD_00110,"Bhopal, MP",2.2,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0056,FARM_0056,FLD_00111,"Indore, MP",3.2,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0056,FARM_0056,FLD_00112,"Indore, MP",1.5,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0057,FARM_0057,FLD_00113,"Nagpur, Maharashtra",1.2,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0057,FARM_0057,FLD_00114,"Nagpur, Maharashtra",3.4,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
-FMR_0058,FARM_0058,FLD_00115,"Ahmedabad, Gujarat",3.0,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0058,FARM_0058,FLD_00116,"Ahmedabad, Gujarat",1.3,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0059,FARM_0059,FLD_00117,"Guntur, AP",3.4,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0059,FARM_0059,FLD_00118,"Guntur, AP",3.8,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0060,FARM_0060,FLD_00119,"Bareilly, UP",2.0,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0060,FARM_0060,FLD_00120,"Bareilly, UP",3.2,Clay Loam,Drip Irrigation,Maize,Potato,manual
-FMR_0061,FARM_0061,FLD_00121,"Varanasi, UP",2.1,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0061,FARM_0061,FLD_00122,"Varanasi, UP",3.5,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0062,FARM_0062,FLD_00123,"Meerut, UP",2.9,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0062,FARM_0062,FLD_00124,"Meerut, UP",1.5,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0063,FARM_0063,FLD_00125,"Karnal, Haryana",2.3,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0063,FARM_0063,FLD_00126,"Karnal, Haryana",1.9,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0064,FARM_0064,FLD_00127,"Ludhiana, Punjab",2.7,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0064,FARM_0064,FLD_00128,"Ludhiana, Punjab",2.1,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0065,FARM_0065,FLD_00129,"Patna, Bihar",3.1,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0065,FARM_0065,FLD_00130,"Patna, Bihar",1.4,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0066,FARM_0066,FLD_00131,"Samastipur, Bihar",1.0,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0066,FARM_0066,FLD_00132,"Samastipur, Bihar",1.0,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0067,FARM_0067,FLD_00133,"Bhopal, MP",1.0,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0067,FARM_0067,FLD_00134,"Bhopal, MP",2.8,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
-FMR_0068,FARM_0068,FLD_00135,"Indore, MP",1.4,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0068,FARM_0068,FLD_00136,"Indore, MP",1.3,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0069,FARM_0069,FLD_00137,"Nagpur, Maharashtra",3.1,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0069,FARM_0069,FLD_00138,"Nagpur, Maharashtra",2.3,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0070,FARM_0070,FLD_00139,"Ahmedabad, Gujarat",2.3,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0070,FARM_0070,FLD_00140,"Ahmedabad, Gujarat",3.7,Clay Loam,Drip Irrigation,Maize,Potato,manual
-FMR_0071,FARM_0071,FLD_00141,"Guntur, AP",2.6,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0071,FARM_0071,FLD_00142,"Guntur, AP",1.0,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0072,FARM_0072,FLD_00143,"Bareilly, UP",2.5,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0072,FARM_0072,FLD_00144,"Bareilly, UP",2.8,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0073,FARM_0073,FLD_00145,"Varanasi, UP",3.6,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0073,FARM_0073,FLD_00146,"Varanasi, UP",3.3,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0074,FARM_0074,FLD_00147,"Meerut, UP",1.0,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0074,FARM_0074,FLD_00148,"Meerut, UP",2.8,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0075,FARM_0075,FLD_00149,"Karnal, Haryana",3.9,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0053,FARM_0053,FLD_00105,"Patna, Bihar",1.5,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0053,FARM_0053,FLD_00106,"Patna, Bihar",1.5,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0054,FARM_0054,FLD_00107,"Samastipur, Bihar",1.2,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0054,FARM_0054,FLD_00108,"Samastipur, Bihar",3.1,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0055,FARM_0055,FLD_00109,"Bhopal, MP",3.5,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0055,FARM_0055,FLD_00110,"Bhopal, MP",1.0,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0056,FARM_0056,FLD_00111,"Indore, MP",3.9,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0056,FARM_0056,FLD_00112,"Indore, MP",1.3,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0057,FARM_0057,FLD_00113,"Nagpur, Maharashtra",3.2,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0057,FARM_0057,FLD_00114,"Nagpur, Maharashtra",2.0,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0058,FARM_0058,FLD_00115,"Ahmedabad, Gujarat",1.8,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
+FMR_0058,FARM_0058,FLD_00116,"Ahmedabad, Gujarat",3.0,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0059,FARM_0059,FLD_00117,"Guntur, AP",1.3,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0059,FARM_0059,FLD_00118,"Guntur, AP",2.0,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0060,FARM_0060,FLD_00119,"Bareilly, UP",2.3,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0060,FARM_0060,FLD_00120,"Bareilly, UP",2.6,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0061,FARM_0061,FLD_00121,"Varanasi, UP",1.0,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0061,FARM_0061,FLD_00122,"Varanasi, UP",3.1,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0062,FARM_0062,FLD_00123,"Meerut, UP",2.7,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0062,FARM_0062,FLD_00124,"Meerut, UP",1.1,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0063,FARM_0063,FLD_00125,"Karnal, Haryana",1.5,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0063,FARM_0063,FLD_00126,"Karnal, Haryana",1.1,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0064,FARM_0064,FLD_00127,"Ludhiana, Punjab",3.9,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0064,FARM_0064,FLD_00128,"Ludhiana, Punjab",1.3,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0065,FARM_0065,FLD_00129,"Patna, Bihar",1.2,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0065,FARM_0065,FLD_00130,"Patna, Bihar",1.9,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0066,FARM_0066,FLD_00131,"Samastipur, Bihar",2.8,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0066,FARM_0066,FLD_00132,"Samastipur, Bihar",1.4,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0067,FARM_0067,FLD_00133,"Bhopal, MP",3.1,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0067,FARM_0067,FLD_00134,"Bhopal, MP",3.0,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0068,FARM_0068,FLD_00135,"Indore, MP",3.5,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
+FMR_0068,FARM_0068,FLD_00136,"Indore, MP",1.9,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0069,FARM_0069,FLD_00137,"Nagpur, Maharashtra",3.7,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0069,FARM_0069,FLD_00138,"Nagpur, Maharashtra",1.8,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0070,FARM_0070,FLD_00139,"Ahmedabad, Gujarat",3.6,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0070,FARM_0070,FLD_00140,"Ahmedabad, Gujarat",3.8,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0071,FARM_0071,FLD_00141,"Guntur, AP",2.7,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0071,FARM_0071,FLD_00142,"Guntur, AP",2.3,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0072,FARM_0072,FLD_00143,"Bareilly, UP",3.8,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0072,FARM_0072,FLD_00144,"Bareilly, UP",3.2,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0073,FARM_0073,FLD_00145,"Varanasi, UP",1.8,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0073,FARM_0073,FLD_00146,"Varanasi, UP",1.3,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0074,FARM_0074,FLD_00147,"Meerut, UP",3.4,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0074,FARM_0074,FLD_00148,"Meerut, UP",3.6,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0075,FARM_0075,FLD_00149,"Karnal, Haryana",3.4,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
 FMR_0075,FARM_0075,FLD_00150,"Karnal, Haryana",3.4,Clay Loam,Rainfed (No source),Maize,Potato,manual
 FMR_0076,FARM_0076,FLD_00151,"Ludhiana, Punjab",3.6,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0076,FARM_0076,FLD_00152,"Ludhiana, Punjab",3.0,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0077,FARM_0077,FLD_00153,"Patna, Bihar",3.3,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0077,FARM_0077,FLD_00154,"Patna, Bihar",3.5,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
-FMR_0078,FARM_0078,FLD_00155,"Samastipur, Bihar",1.1,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0078,FARM_0078,FLD_00156,"Samastipur, Bihar",1.9,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0079,FARM_0079,FLD_00157,"Bhopal, MP",3.4,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0079,FARM_0079,FLD_00158,"Bhopal, MP",2.4,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0080,FARM_0080,FLD_00159,"Indore, MP",1.1,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0080,FARM_0080,FLD_00160,"Indore, MP",2.3,Clay Loam,Drip Irrigation,Maize,Potato,manual
-FMR_0081,FARM_0081,FLD_00161,"Nagpur, Maharashtra",2.0,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0081,FARM_0081,FLD_00162,"Nagpur, Maharashtra",1.9,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0082,FARM_0082,FLD_00163,"Ahmedabad, Gujarat",1.9,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0082,FARM_0082,FLD_00164,"Ahmedabad, Gujarat",3.0,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0083,FARM_0083,FLD_00165,"Guntur, AP",3.3,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0083,FARM_0083,FLD_00166,"Guntur, AP",3.2,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0084,FARM_0084,FLD_00167,"Bareilly, UP",3.0,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0084,FARM_0084,FLD_00168,"Bareilly, UP",2.1,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0085,FARM_0085,FLD_00169,"Varanasi, UP",1.2,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0085,FARM_0085,FLD_00170,"Varanasi, UP",3.4,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0086,FARM_0086,FLD_00171,"Meerut, UP",2.4,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0086,FARM_0086,FLD_00172,"Meerut, UP",1.6,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0087,FARM_0087,FLD_00173,"Karnal, Haryana",2.8,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0087,FARM_0087,FLD_00174,"Karnal, Haryana",2.3,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
-FMR_0088,FARM_0088,FLD_00175,"Ludhiana, Punjab",1.4,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0088,FARM_0088,FLD_00176,"Ludhiana, Punjab",1.9,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0089,FARM_0089,FLD_00177,"Patna, Bihar",2.4,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0089,FARM_0089,FLD_00178,"Patna, Bihar",2.9,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0090,FARM_0090,FLD_00179,"Samastipur, Bihar",3.5,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0090,FARM_0090,FLD_00180,"Samastipur, Bihar",2.3,Clay Loam,Drip Irrigation,Maize,Potato,manual
-FMR_0091,FARM_0091,FLD_00181,"Bhopal, MP",2.0,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0091,FARM_0091,FLD_00182,"Bhopal, MP",2.7,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0092,FARM_0092,FLD_00183,"Indore, MP",1.3,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0092,FARM_0092,FLD_00184,"Indore, MP",2.1,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0093,FARM_0093,FLD_00185,"Nagpur, Maharashtra",1.5,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0093,FARM_0093,FLD_00186,"Nagpur, Maharashtra",3.7,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0094,FARM_0094,FLD_00187,"Ahmedabad, Gujarat",1.0,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0094,FARM_0094,FLD_00188,"Ahmedabad, Gujarat",3.3,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0095,FARM_0095,FLD_00189,"Guntur, AP",2.3,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0095,FARM_0095,FLD_00190,"Guntur, AP",3.3,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0096,FARM_0096,FLD_00191,"Bareilly, UP",1.9,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0096,FARM_0096,FLD_00192,"Bareilly, UP",1.9,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0097,FARM_0097,FLD_00193,"Varanasi, UP",1.0,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0097,FARM_0097,FLD_00194,"Varanasi, UP",2.2,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0076,FARM_0076,FLD_00152,"Ludhiana, Punjab",3.5,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0077,FARM_0077,FLD_00153,"Patna, Bihar",3.0,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0077,FARM_0077,FLD_00154,"Patna, Bihar",2.0,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0078,FARM_0078,FLD_00155,"Samastipur, Bihar",3.4,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
+FMR_0078,FARM_0078,FLD_00156,"Samastipur, Bihar",2.4,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0079,FARM_0079,FLD_00157,"Bhopal, MP",3.6,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0079,FARM_0079,FLD_00158,"Bhopal, MP",1.2,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0080,FARM_0080,FLD_00159,"Indore, MP",3.3,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0080,FARM_0080,FLD_00160,"Indore, MP",3.7,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0081,FARM_0081,FLD_00161,"Nagpur, Maharashtra",3.3,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0081,FARM_0081,FLD_00162,"Nagpur, Maharashtra",1.0,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0082,FARM_0082,FLD_00163,"Ahmedabad, Gujarat",3.8,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0082,FARM_0082,FLD_00164,"Ahmedabad, Gujarat",3.6,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0083,FARM_0083,FLD_00165,"Guntur, AP",1.0,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0083,FARM_0083,FLD_00166,"Guntur, AP",2.4,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0084,FARM_0084,FLD_00167,"Bareilly, UP",3.6,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0084,FARM_0084,FLD_00168,"Bareilly, UP",2.8,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0085,FARM_0085,FLD_00169,"Varanasi, UP",3.7,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0085,FARM_0085,FLD_00170,"Varanasi, UP",1.3,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0086,FARM_0086,FLD_00171,"Meerut, UP",1.4,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0086,FARM_0086,FLD_00172,"Meerut, UP",1.8,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0087,FARM_0087,FLD_00173,"Karnal, Haryana",2.7,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0087,FARM_0087,FLD_00174,"Karnal, Haryana",3.8,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0088,FARM_0088,FLD_00175,"Ludhiana, Punjab",2.1,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
+FMR_0088,FARM_0088,FLD_00176,"Ludhiana, Punjab",2.1,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0089,FARM_0089,FLD_00177,"Patna, Bihar",2.0,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0089,FARM_0089,FLD_00178,"Patna, Bihar",3.9,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0090,FARM_0090,FLD_00179,"Samastipur, Bihar",3.6,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0090,FARM_0090,FLD_00180,"Samastipur, Bihar",3.5,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0091,FARM_0091,FLD_00181,"Bhopal, MP",1.7,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0091,FARM_0091,FLD_00182,"Bhopal, MP",2.0,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0092,FARM_0092,FLD_00183,"Indore, MP",2.2,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0092,FARM_0092,FLD_00184,"Indore, MP",2.6,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0093,FARM_0093,FLD_00185,"Nagpur, Maharashtra",1.7,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0093,FARM_0093,FLD_00186,"Nagpur, Maharashtra",1.1,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0094,FARM_0094,FLD_00187,"Ahmedabad, Gujarat",2.8,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0094,FARM_0094,FLD_00188,"Ahmedabad, Gujarat",3.7,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0095,FARM_0095,FLD_00189,"Guntur, AP",2.9,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0095,FARM_0095,FLD_00190,"Guntur, AP",2.4,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0096,FARM_0096,FLD_00191,"Bareilly, UP",3.5,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0096,FARM_0096,FLD_00192,"Bareilly, UP",2.8,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0097,FARM_0097,FLD_00193,"Varanasi, UP",1.9,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0097,FARM_0097,FLD_00194,"Varanasi, UP",2.1,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
 FMR_0098,FARM_0098,FLD_00195,"Meerut, UP",2.2,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0098,FARM_0098,FLD_00196,"Meerut, UP",3.7,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0099,FARM_0099,FLD_00197,"Karnal, Haryana",3.1,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0099,FARM_0099,FLD_00198,"Karnal, Haryana",1.2,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0100,FARM_0100,FLD_00199,"Ludhiana, Punjab",3.1,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0100,FARM_0100,FLD_00200,"Ludhiana, Punjab",3.6,Clay Loam,Drip Irrigation,Maize,Potato,manual
-FMR_0101,FARM_0101,FLD_00201,"Patna, Bihar",3.3,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0101,FARM_0101,FLD_00202,"Patna, Bihar",3.2,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0102,FARM_0102,FLD_00203,"Samastipur, Bihar",2.2,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0102,FARM_0102,FLD_00204,"Samastipur, Bihar",2.6,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0103,FARM_0103,FLD_00205,"Bhopal, MP",1.5,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0103,FARM_0103,FLD_00206,"Bhopal, MP",1.4,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0104,FARM_0104,FLD_00207,"Indore, MP",1.5,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0104,FARM_0104,FLD_00208,"Indore, MP",1.9,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0105,FARM_0105,FLD_00209,"Nagpur, Maharashtra",2.3,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0105,FARM_0105,FLD_00210,"Nagpur, Maharashtra",1.2,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0106,FARM_0106,FLD_00211,"Ahmedabad, Gujarat",1.8,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0106,FARM_0106,FLD_00212,"Ahmedabad, Gujarat",1.1,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0107,FARM_0107,FLD_00213,"Guntur, AP",1.0,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0107,FARM_0107,FLD_00214,"Guntur, AP",2.0,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
-FMR_0108,FARM_0108,FLD_00215,"Bareilly, UP",3.7,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0108,FARM_0108,FLD_00216,"Bareilly, UP",3.2,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0109,FARM_0109,FLD_00217,"Varanasi, UP",3.8,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0109,FARM_0109,FLD_00218,"Varanasi, UP",3.4,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0110,FARM_0110,FLD_00219,"Meerut, UP",3.9,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0110,FARM_0110,FLD_00220,"Meerut, UP",2.9,Clay Loam,Drip Irrigation,Maize,Potato,manual
-FMR_0111,FARM_0111,FLD_00221,"Karnal, Haryana",2.9,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0111,FARM_0111,FLD_00222,"Karnal, Haryana",3.4,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0112,FARM_0112,FLD_00223,"Ludhiana, Punjab",1.1,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0112,FARM_0112,FLD_00224,"Ludhiana, Punjab",2.7,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0113,FARM_0113,FLD_00225,"Patna, Bihar",3.3,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0113,FARM_0113,FLD_00226,"Patna, Bihar",2.3,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0114,FARM_0114,FLD_00227,"Samastipur, Bihar",3.8,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0114,FARM_0114,FLD_00228,"Samastipur, Bihar",2.5,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0115,FARM_0115,FLD_00229,"Bhopal, MP",3.1,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0115,FARM_0115,FLD_00230,"Bhopal, MP",2.1,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0116,FARM_0116,FLD_00231,"Indore, MP",1.0,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0116,FARM_0116,FLD_00232,"Indore, MP",2.9,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0117,FARM_0117,FLD_00233,"Nagpur, Maharashtra",1.8,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0117,FARM_0117,FLD_00234,"Nagpur, Maharashtra",1.3,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
-FMR_0118,FARM_0118,FLD_00235,"Ahmedabad, Gujarat",3.7,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0118,FARM_0118,FLD_00236,"Ahmedabad, Gujarat",2.4,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0119,FARM_0119,FLD_00237,"Guntur, AP",3.9,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0119,FARM_0119,FLD_00238,"Guntur, AP",3.8,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0120,FARM_0120,FLD_00239,"Bareilly, UP",2.5,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0120,FARM_0120,FLD_00240,"Bareilly, UP",3.5,Clay Loam,Drip Irrigation,Maize,Potato,manual
-FMR_0121,FARM_0121,FLD_00241,"Varanasi, UP",2.0,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0121,FARM_0121,FLD_00242,"Varanasi, UP",3.4,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0122,FARM_0122,FLD_00243,"Meerut, UP",3.8,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0122,FARM_0122,FLD_00244,"Meerut, UP",1.7,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0123,FARM_0123,FLD_00245,"Karnal, Haryana",3.3,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0123,FARM_0123,FLD_00246,"Karnal, Haryana",3.1,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0124,FARM_0124,FLD_00247,"Ludhiana, Punjab",3.0,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0124,FARM_0124,FLD_00248,"Ludhiana, Punjab",3.2,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0125,FARM_0125,FLD_00249,"Patna, Bihar",1.1,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0125,FARM_0125,FLD_00250,"Patna, Bihar",2.3,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0126,FARM_0126,FLD_00251,"Samastipur, Bihar",1.2,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0126,FARM_0126,FLD_00252,"Samastipur, Bihar",3.4,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0127,FARM_0127,FLD_00253,"Bhopal, MP",3.9,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0127,FARM_0127,FLD_00254,"Bhopal, MP",1.5,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0098,FARM_0098,FLD_00196,"Meerut, UP",1.8,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0099,FARM_0099,FLD_00197,"Karnal, Haryana",2.4,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0099,FARM_0099,FLD_00198,"Karnal, Haryana",2.2,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0100,FARM_0100,FLD_00199,"Ludhiana, Punjab",3.5,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0100,FARM_0100,FLD_00200,"Ludhiana, Punjab",3.9,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0101,FARM_0101,FLD_00201,"Patna, Bihar",3.9,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0101,FARM_0101,FLD_00202,"Patna, Bihar",2.5,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0102,FARM_0102,FLD_00203,"Samastipur, Bihar",3.9,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0102,FARM_0102,FLD_00204,"Samastipur, Bihar",3.2,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0103,FARM_0103,FLD_00205,"Bhopal, MP",3.8,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0103,FARM_0103,FLD_00206,"Bhopal, MP",2.0,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0104,FARM_0104,FLD_00207,"Indore, MP",3.7,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0104,FARM_0104,FLD_00208,"Indore, MP",1.0,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0105,FARM_0105,FLD_00209,"Nagpur, Maharashtra",3.2,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0105,FARM_0105,FLD_00210,"Nagpur, Maharashtra",2.9,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0106,FARM_0106,FLD_00211,"Ahmedabad, Gujarat",1.6,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0106,FARM_0106,FLD_00212,"Ahmedabad, Gujarat",2.1,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0107,FARM_0107,FLD_00213,"Guntur, AP",3.1,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0107,FARM_0107,FLD_00214,"Guntur, AP",3.5,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0108,FARM_0108,FLD_00215,"Bareilly, UP",1.5,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
+FMR_0108,FARM_0108,FLD_00216,"Bareilly, UP",3.3,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0109,FARM_0109,FLD_00217,"Varanasi, UP",1.5,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0109,FARM_0109,FLD_00218,"Varanasi, UP",2.9,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0110,FARM_0110,FLD_00219,"Meerut, UP",2.9,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0110,FARM_0110,FLD_00220,"Meerut, UP",2.7,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0111,FARM_0111,FLD_00221,"Karnal, Haryana",2.7,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0111,FARM_0111,FLD_00222,"Karnal, Haryana",2.8,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0112,FARM_0112,FLD_00223,"Ludhiana, Punjab",3.9,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0112,FARM_0112,FLD_00224,"Ludhiana, Punjab",2.1,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0113,FARM_0113,FLD_00225,"Patna, Bihar",2.0,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0113,FARM_0113,FLD_00226,"Patna, Bihar",3.2,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0114,FARM_0114,FLD_00227,"Samastipur, Bihar",2.2,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0114,FARM_0114,FLD_00228,"Samastipur, Bihar",1.9,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0115,FARM_0115,FLD_00229,"Bhopal, MP",1.5,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0115,FARM_0115,FLD_00230,"Bhopal, MP",1.8,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0116,FARM_0116,FLD_00231,"Indore, MP",1.2,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0116,FARM_0116,FLD_00232,"Indore, MP",3.5,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0117,FARM_0117,FLD_00233,"Nagpur, Maharashtra",1.7,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0117,FARM_0117,FLD_00234,"Nagpur, Maharashtra",3.6,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0118,FARM_0118,FLD_00235,"Ahmedabad, Gujarat",1.5,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
+FMR_0118,FARM_0118,FLD_00236,"Ahmedabad, Gujarat",2.7,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0119,FARM_0119,FLD_00237,"Guntur, AP",1.7,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0119,FARM_0119,FLD_00238,"Guntur, AP",1.3,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0120,FARM_0120,FLD_00239,"Bareilly, UP",2.4,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0120,FARM_0120,FLD_00240,"Bareilly, UP",2.8,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0121,FARM_0121,FLD_00241,"Varanasi, UP",1.9,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0121,FARM_0121,FLD_00242,"Varanasi, UP",2.9,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0122,FARM_0122,FLD_00243,"Meerut, UP",2.8,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0122,FARM_0122,FLD_00244,"Meerut, UP",2.7,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0123,FARM_0123,FLD_00245,"Karnal, Haryana",3.0,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0123,FARM_0123,FLD_00246,"Karnal, Haryana",3.3,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0124,FARM_0124,FLD_00247,"Ludhiana, Punjab",1.9,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0124,FARM_0124,FLD_00248,"Ludhiana, Punjab",1.6,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0125,FARM_0125,FLD_00249,"Patna, Bihar",3.1,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0125,FARM_0125,FLD_00250,"Patna, Bihar",1.7,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0126,FARM_0126,FLD_00251,"Samastipur, Bihar",2.7,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0126,FARM_0126,FLD_00252,"Samastipur, Bihar",2.5,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0127,FARM_0127,FLD_00253,"Bhopal, MP",3.0,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0127,FARM_0127,FLD_00254,"Bhopal, MP",2.5,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
 FMR_0128,FARM_0128,FLD_00255,"Indore, MP",1.6,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0128,FARM_0128,FLD_00256,"Indore, MP",2.8,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0129,FARM_0129,FLD_00257,"Nagpur, Maharashtra",3.9,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0129,FARM_0129,FLD_00258,"Nagpur, Maharashtra",3.4,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0130,FARM_0130,FLD_00259,"Ahmedabad, Gujarat",3.9,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0130,FARM_0130,FLD_00260,"Ahmedabad, Gujarat",3.3,Clay Loam,Drip Irrigation,Maize,Potato,manual
-FMR_0131,FARM_0131,FLD_00261,"Guntur, AP",3.8,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0131,FARM_0131,FLD_00262,"Guntur, AP",1.6,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0132,FARM_0132,FLD_00263,"Bareilly, UP",3.6,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0132,FARM_0132,FLD_00264,"Bareilly, UP",3.2,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0133,FARM_0133,FLD_00265,"Varanasi, UP",2.6,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0133,FARM_0133,FLD_00266,"Varanasi, UP",2.9,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0128,FARM_0128,FLD_00256,"Indore, MP",1.1,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0129,FARM_0129,FLD_00257,"Nagpur, Maharashtra",1.7,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0129,FARM_0129,FLD_00258,"Nagpur, Maharashtra",2.7,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0130,FARM_0130,FLD_00259,"Ahmedabad, Gujarat",1.8,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0130,FARM_0130,FLD_00260,"Ahmedabad, Gujarat",3.5,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0131,FARM_0131,FLD_00261,"Guntur, AP",3.4,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0131,FARM_0131,FLD_00262,"Guntur, AP",1.5,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0132,FARM_0132,FLD_00263,"Bareilly, UP",2.2,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0132,FARM_0132,FLD_00264,"Bareilly, UP",1.2,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0133,FARM_0133,FLD_00265,"Varanasi, UP",1.6,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0133,FARM_0133,FLD_00266,"Varanasi, UP",2.8,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
 FMR_0134,FARM_0134,FLD_00267,"Meerut, UP",1.5,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0134,FARM_0134,FLD_00268,"Meerut, UP",1.6,Red Loam,Drip Irrigation,Maize,Mustard,manual
-FMR_0135,FARM_0135,FLD_00269,"Karnal, Haryana",3.3,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0135,FARM_0135,FLD_00270,"Karnal, Haryana",3.2,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0136,FARM_0136,FLD_00271,"Ludhiana, Punjab",2.5,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0136,FARM_0136,FLD_00272,"Ludhiana, Punjab",1.7,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0137,FARM_0137,FLD_00273,"Patna, Bihar",3.0,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0137,FARM_0137,FLD_00274,"Patna, Bihar",3.3,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
-FMR_0138,FARM_0138,FLD_00275,"Samastipur, Bihar",3.5,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0138,FARM_0138,FLD_00276,"Samastipur, Bihar",1.2,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0139,FARM_0139,FLD_00277,"Bhopal, MP",1.6,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0139,FARM_0139,FLD_00278,"Bhopal, MP",1.1,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0140,FARM_0140,FLD_00279,"Indore, MP",2.7,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0140,FARM_0140,FLD_00280,"Indore, MP",1.3,Clay Loam,Drip Irrigation,Maize,Potato,manual
-FMR_0141,FARM_0141,FLD_00281,"Nagpur, Maharashtra",3.7,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
-FMR_0141,FARM_0141,FLD_00282,"Nagpur, Maharashtra",2.1,Black Soil,Rainfed (No source),Maize,Chickpea,manual
-FMR_0142,FARM_0142,FLD_00283,"Ahmedabad, Gujarat",2.2,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
-FMR_0142,FARM_0142,FLD_00284,"Ahmedabad, Gujarat",1.8,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
-FMR_0143,FARM_0143,FLD_00285,"Guntur, AP",3.3,Clay Loam,Sprinkler,Maize,Potato,manual
-FMR_0143,FARM_0143,FLD_00286,"Guntur, AP",3.3,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
-FMR_0144,FARM_0144,FLD_00287,"Bareilly, UP",3.9,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
-FMR_0144,FARM_0144,FLD_00288,"Bareilly, UP",2.0,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0134,FARM_0134,FLD_00268,"Meerut, UP",1.5,Red Loam,Drip Irrigation,Maize,Mustard,manual
+FMR_0135,FARM_0135,FLD_00269,"Karnal, Haryana",1.0,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
+FMR_0135,FARM_0135,FLD_00270,"Karnal, Haryana",1.2,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0136,FARM_0136,FLD_00271,"Ludhiana, Punjab",1.2,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0136,FARM_0136,FLD_00272,"Ludhiana, Punjab",1.8,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0137,FARM_0137,FLD_00273,"Patna, Bihar",3.6,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0137,FARM_0137,FLD_00274,"Patna, Bihar",3.8,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0138,FARM_0138,FLD_00275,"Samastipur, Bihar",2.9,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
+FMR_0138,FARM_0138,FLD_00276,"Samastipur, Bihar",1.0,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0139,FARM_0139,FLD_00277,"Bhopal, MP",2.4,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0139,FARM_0139,FLD_00278,"Bhopal, MP",3.8,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0140,FARM_0140,FLD_00279,"Indore, MP",2.0,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0140,FARM_0140,FLD_00280,"Indore, MP",2.0,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0141,FARM_0141,FLD_00281,"Nagpur, Maharashtra",3.0,Sandy Loam,Sprinkler,Rice (Paddy),Wheat,manual
+FMR_0141,FARM_0141,FLD_00282,"Nagpur, Maharashtra",2.6,Black Soil,Rainfed (No source),Maize,Chickpea,manual
+FMR_0142,FARM_0142,FLD_00283,"Ahmedabad, Gujarat",2.1,Red Loam,Tube Well (Canal / Groundwater),Maize,Mustard,manual
+FMR_0142,FARM_0142,FLD_00284,"Ahmedabad, Gujarat",3.2,Alluvial,Drip Irrigation,Cotton (Seed Cotton),,manual
+FMR_0143,FARM_0143,FLD_00285,"Guntur, AP",1.2,Clay Loam,Sprinkler,Maize,Potato,manual
+FMR_0143,FARM_0143,FLD_00286,"Guntur, AP",2.5,Sandy Loam,Rainfed (No source),Rice (Paddy),Wheat,manual
+FMR_0144,FARM_0144,FLD_00287,"Bareilly, UP",3.7,Black Soil,Tube Well (Canal / Groundwater),Maize,Chickpea,manual
+FMR_0144,FARM_0144,FLD_00288,"Bareilly, UP",3.4,Red Loam,Drip Irrigation,Maize,Mustard,manual
 FMR_0145,FARM_0145,FLD_00289,"Varanasi, UP",1.8,Alluvial,Sprinkler,Cotton (Seed Cotton),,manual
-FMR_0145,FARM_0145,FLD_00290,"Varanasi, UP",1.5,Clay Loam,Rainfed (No source),Maize,Potato,manual
-FMR_0146,FARM_0146,FLD_00291,"Meerut, UP",1.6,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
-FMR_0146,FARM_0146,FLD_00292,"Meerut, UP",1.6,Black Soil,Drip Irrigation,Maize,Chickpea,manual
-FMR_0147,FARM_0147,FLD_00293,"Karnal, Haryana",3.5,Red Loam,Sprinkler,Maize,Mustard,manual
-FMR_0147,FARM_0147,FLD_00294,"Karnal, Haryana",2.1,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
-FMR_0148,FARM_0148,FLD_00295,"Ludhiana, Punjab",1.9,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
-FMR_0148,FARM_0148,FLD_00296,"Ludhiana, Punjab",3.4,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
-FMR_0149,FARM_0149,FLD_00297,"Patna, Bihar",3.9,Black Soil,Sprinkler,Maize,Chickpea,manual
-FMR_0149,FARM_0149,FLD_00298,"Patna, Bihar",2.4,Red Loam,Rainfed (No source),Maize,Mustard,manual
-FMR_0150,FARM_0150,FLD_00299,"Samastipur, Bihar",1.8,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
-FMR_0150,FARM_0150,FLD_00300,"Samastipur, Bihar",1.3,Clay Loam,Drip Irrigation,Maize,Potato,manual
+FMR_0145,FARM_0145,FLD_00290,"Varanasi, UP",3.1,Clay Loam,Rainfed (No source),Maize,Potato,manual
+FMR_0146,FARM_0146,FLD_00291,"Meerut, UP",1.0,Sandy Loam,Tube Well (Canal / Groundwater),Rice (Paddy),Wheat,manual
+FMR_0146,FARM_0146,FLD_00292,"Meerut, UP",2.3,Black Soil,Drip Irrigation,Maize,Chickpea,manual
+FMR_0147,FARM_0147,FLD_00293,"Karnal, Haryana",2.0,Red Loam,Sprinkler,Maize,Mustard,manual
+FMR_0147,FARM_0147,FLD_00294,"Karnal, Haryana",3.7,Alluvial,Rainfed (No source),Cotton (Seed Cotton),,manual
+FMR_0148,FARM_0148,FLD_00295,"Ludhiana, Punjab",2.9,Clay Loam,Tube Well (Canal / Groundwater),Maize,Potato,manual
+FMR_0148,FARM_0148,FLD_00296,"Ludhiana, Punjab",1.7,Sandy Loam,Drip Irrigation,Rice (Paddy),Wheat,manual
+FMR_0149,FARM_0149,FLD_00297,"Patna, Bihar",2.8,Black Soil,Sprinkler,Maize,Chickpea,manual
+FMR_0149,FARM_0149,FLD_00298,"Patna, Bihar",2.8,Red Loam,Rainfed (No source),Maize,Mustard,manual
+FMR_0150,FARM_0150,FLD_00299,"Samastipur, Bihar",2.9,Alluvial,Tube Well (Canal / Groundwater),Cotton (Seed Cotton),,manual
+FMR_0150,FARM_0150,FLD_00300,"Samastipur, Bihar",2.7,Clay Loam,Drip Irrigation,Maize,Potato,manual
