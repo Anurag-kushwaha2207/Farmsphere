@@ -1,0 +1,40 @@
+{
+  "system": "FarmSphere AI Level 3 Smart Agriculture Platform",
+  "evaluation_date": "2026-10-29 14:16:27",
+  "models": {
+    "crop_recommendation": {
+      "algorithm": "Random Forest",
+      "total_test_samples": 2400,
+      "num_classes": 8,
+      "accuracy_pct": 98.62,
+      "weighted_precision_pct": 98.63,
+      "weighted_recall_pct": 98.62,
+      "weighted_f1_pct": 98.63,
+      "status": "PASSED"
+    },
+    "crop_suitability": {
+      "Wheat": {
+        "samples_evaluated": 2200,
+        "score_r2": 0.9654,
+        "score_mae": 1.79,
+        "class_accuracy_pct": 95.55,
+        "status": "PASSED"
+      },
+      "Rice (Paddy)": {
+        "samples_evaluated": 2200,
+        "score_r2": 0.9512,
+        "score_mae": 2.53,
+        "class_accuracy_pct": 97.55,
+        "status": "PASSED"
+      }
+    },
+    "yield_prediction": {
+      "total_samples": 5083,
+      "r2_score": 0.9954,
+      "mae_tonnes_per_ha": 0.26,
+      "rmse_tonnes_per_ha": 0.518,
+      "mape_pct": 4.44,
+      "status": "PASSED"
+    }
+  }
+}

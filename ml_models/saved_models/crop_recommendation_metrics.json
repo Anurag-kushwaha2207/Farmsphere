@@ -1,0 +1,134 @@
+{
+  "model_name": "Crop Recommendation Classifier",
+  "algorithm": "Random Forest",
+  "features": [
+    "N",
+    "P",
+    "K",
+    "temperature",
+    "humidity",
+    "ph",
+    "rainfall"
+  ],
+  "classes": [
+    "Chickpea",
+    "Cotton",
+    "Maize",
+    "Mustard",
+    "Potato",
+    "Rice (Paddy)",
+    "Sugarcane",
+    "Wheat"
+  ],
+  "cross_validation": {
+    "Decision Tree": {
+      "mean_accuracy": 0.876,
+      "std": 0.0153
+    },
+    "Random Forest": {
+      "mean_accuracy": 0.9203,
+      "std": 0.0126
+    },
+    "Gradient Boosting": {
+      "mean_accuracy": 0.9167,
+      "std": 0.0105
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.9313,
+    "precision_weighted": 0.9322,
+    "recall_weighted": 0.9313,
+    "f1_weighted": 0.9315
+  },
+  "feature_importances": {
+    "N": 0.2806,
+    "P": 0.1086,
+    "K": 0.1447,
+    "temperature": 0.1114,
+    "humidity": 0.0796,
+    "ph": 0.0781,
+    "rainfall": 0.1969
+  },
+  "confusion_matrix": [
+    [
+      58,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      50,
+      6,
+      1,
+      0,
+      1,
+      0,
+      2
+    ],
+    [
+      0,
+      6,
+      51,
+      0,
+      0,
+      0,
+      0,
+      3
+    ],
+    [
+      0,
+      0,
+      0,
+      57,
+      0,
+      0,
+      0,
+      3
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      60,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      3,
+      0,
+      0,
+      57,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      60,
+      0
+    ],
+    [
+      0,
+      2,
+      2,
+      2,
+      0,
+      0,
+      0,
+      54
+    ]
+  ]
+}

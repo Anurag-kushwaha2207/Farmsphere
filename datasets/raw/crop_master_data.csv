@@ -1,0 +1,9 @@
+crop_id,crop_name,category,primary_season,min_temp_c,opt_temp_c,max_temp_c,min_ph,opt_ph,max_ph,req_n_kg_ha,req_p_kg_ha,req_k_kg_ha,min_rainfall_mm,opt_rainfall_mm,max_rainfall_mm,preferred_soil,base_potential_yield_t_ha
+wheat,Wheat,Cereal,Rabi (Winter),10,20,30,6.0,6.8,7.8,120,60,40,300,500,800,"Alluvial, Loamy",5.2
+rice,Rice (Paddy),Cereal,Kharif (Monsoon),20,28,38,5.5,6.2,7.2,130,50,60,900,1400,2500,"Clayey, Clay Loam",5.5
+maize,Maize,Cereal,Kharif (Monsoon),18,26,35,5.8,6.5,7.5,120,60,50,450,650,1000,"Sandy Loam, Loamy",6.0
+cotton,Cotton,Fibre / Cash,Kharif (Monsoon),21,28,37,6.0,7.2,8.2,100,50,50,550,750,1200,"Black Soil, Clay Loam",2.8
+chickpea,Chickpea,Pulse / Legume,Rabi (Winter),12,20,28,6.0,7.0,8.0,25,60,30,250,400,650,"Sandy Loam, Alluvial",2.2
+potato,Potato,Tuber,Rabi (Winter),14,19,25,5.0,5.8,6.8,150,80,120,400,550,800,"Sandy Loam, Loose Alluvial",28.0
+mustard,Mustard,Oilseed,Rabi (Winter),10,18,27,6.0,7.0,8.2,80,40,40,250,380,550,"Sandy Loam, Loam",1.9
+sugarcane,Sugarcane,Commercial,Annual,20,30,40,6.0,6.8,7.8,200,80,100,1200,1800,2600,"Deep Alluvial, Clay Loam",85.0

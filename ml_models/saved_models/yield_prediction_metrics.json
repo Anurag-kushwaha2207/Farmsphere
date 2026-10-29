@@ -1,0 +1,38 @@
+{
+  "model_name": "Crop Yield Prediction Regressor",
+  "algorithm": "Random Forest Regressor",
+  "features": {
+    "categorical": [
+      "crop_name",
+      "soil_type",
+      "irrigation_source",
+      "season"
+    ],
+    "numeric": [
+      "field_area_ha",
+      "avg_temp_c",
+      "season_rainfall_mm",
+      "avg_humidity_pct"
+    ]
+  },
+  "cross_validation": {
+    "Ridge Regression": {
+      "mean_r2": 0.9658,
+      "std": 0.0029
+    },
+    "Random Forest Regressor": {
+      "mean_r2": 0.9869,
+      "std": 0.0009
+    },
+    "Gradient Boosting Regressor": {
+      "mean_r2": 0.9868,
+      "std": 0.0002
+    }
+  },
+  "test_metrics": {
+    "r2_score": 0.9859,
+    "mae_tonnes_per_ha": 0.441,
+    "rmse_tonnes_per_ha": 0.877,
+    "mape_pct": 7.0
+  }
+}

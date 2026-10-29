@@ -1,0 +1,55 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // User Profiles
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Farms Collection
+    match /farms/{farmId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update: if request.auth != null && (
+        resource.data.farmer_id == request.auth.uid || 
+        request.auth.token.role == 'admin'
+      );
+      
+      // Fields Subcollection
+      match /fields/{fieldId} {
+        allow read, write: if request.auth != null;
+      }
+      
+      // Manual Measurements Subcollection
+      // STRICT RULE: If farm data_mode == 'iot', reject manual writes!
+      match /manualMeasurements/{measurementId} {
+        allow read: if request.auth != null;
+        allow create, update: if request.auth != null &&
+          get(/databases/$(database)/documents/farms/$(farmId)).data.data_mode == 'manual';
+        allow delete: if request.auth != null && request.auth.token.role == 'admin';
+      }
+      
+      // IoT Sensor Readings Subcollection
+      match /sensorReadings/{readingId} {
+        allow read: if request.auth != null;
+        // Ingestion permitted from authenticated backend Cloud Functions or verified IoT service
+        allow write: if request.auth != null && request.auth.token.role in ['iot_ingestion', 'admin'];
+      }
+      
+      // Predictions & Recommendations
+      match /predictions/{predictionId} {
+        allow read: if request.auth != null;
+        allow write: if request.auth != null;
+      }
+    }
+    
+    // System Audit Logs (Append-only)
+    match /system/auditLogs/{logId} {
+      allow read: if request.auth != null && request.auth.token.role == 'admin';
+      allow create: if request.auth != null;
+      allow update, delete: if false; // Immutable audit log
+    }
+  }
+}
