@@ -1,10 +1,10 @@
 """
 FarmSphere AI - Data Cleaning & Validation Pipeline
 Responsible for:
-- Missing value imputation (median/mode based on agro-climatic region)
-- Outlier detection and handling (IQR clamping for realistic agricultural bounds)
-- Unit standardization and range validation
-- Preserving data provenance and data lineage
+- Missing value imputation and duplicate removal
+- Outlier handling (IQR clamping for realistic agricultural bounds)
+- Correct conversion from laboratory mg/kg (ppm) to field available kg/ha
+- Categorization using standard ICAR soil fertility ratings (in kg/ha)
 """
 
 import os
@@ -14,6 +14,10 @@ import numpy as np
 RAW_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../datasets/raw'))
 PROCESSED_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../datasets/processed'))
 os.makedirs(PROCESSED_DIR, exist_ok=True)
+
+# Standard furrow slice conversion factor (0-15 cm soil layer, bulk density ~1.33 g/cm3)
+# 1 hectare furrow slice = 2.24 million kg soil => 1 mg/kg (ppm) = 2.24 kg/ha
+PPM_TO_KG_PER_HA = 2.24
 
 class DataCleaner:
     def __init__(self):
@@ -41,10 +45,30 @@ class DataCleaner:
         # Moisture % (5 to 100%)
         df_clean['soil_moisture_pct'] = df_clean['soil_moisture_pct'].clip(lower=5.0, upper=98.0)
 
-        # 3. Categorize NPK Fertility Status according to ICAR standards
-        df_clean['n_status'] = pd.cut(df_clean['nitrogen_mg_kg'], bins=[-np.inf, 50, 100, np.inf], labels=['Low', 'Medium', 'High'])
-        df_clean['p_status'] = pd.cut(df_clean['phosphorus_mg_kg'], bins=[-np.inf, 30, 60, np.inf], labels=['Low', 'Medium', 'High'])
-        df_clean['k_status'] = pd.cut(df_clean['potassium_mg_kg'], bins=[-np.inf, 35, 80, np.inf], labels=['Low', 'Medium', 'High'])
+        # 3. Explicit conversion: mg/kg -> available kg/ha
+        df_clean['available_n_kg_ha'] = round(df_clean['nitrogen_mg_kg'] * PPM_TO_KG_PER_HA, 1)
+        df_clean['available_p_kg_ha'] = round(df_clean['phosphorus_mg_kg'] * PPM_TO_KG_PER_HA, 1)
+        df_clean['available_k_kg_ha'] = round(df_clean['potassium_mg_kg'] * PPM_TO_KG_PER_HA, 1)
+
+        # 4. Standard ICAR Soil Fertility Ratings (evaluated in kg/ha):
+        # - Available Nitrogen: Low < 280 kg/ha, Medium 280 - 560 kg/ha, High > 560 kg/ha
+        # - Available Phosphorus (Olsen P): Low < 10 kg/ha, Medium 10 - 25 kg/ha, High > 25 kg/ha
+        # - Available Potassium: Low < 110 kg/ha, Medium 110 - 280 kg/ha, High > 280 kg/ha
+        df_clean['icar_n_status'] = pd.cut(
+            df_clean['available_n_kg_ha'], 
+            bins=[-np.inf, 280, 560, np.inf], 
+            labels=['Low (<280 kg/ha)', 'Medium (280-560 kg/ha)', 'High (>560 kg/ha)']
+        )
+        df_clean['icar_p_status'] = pd.cut(
+            df_clean['available_p_kg_ha'], 
+            bins=[-np.inf, 10, 25, np.inf], 
+            labels=['Low (<10 kg/ha)', 'Medium (10-25 kg/ha)', 'High (>25 kg/ha)']
+        )
+        df_clean['icar_k_status'] = pd.cut(
+            df_clean['available_k_kg_ha'], 
+            bins=[-np.inf, 110, 280, np.inf], 
+            labels=['Low (<110 kg/ha)', 'Medium (110-280 kg/ha)', 'High (>280 kg/ha)']
+        )
 
         print(f" Cleaned soil records: {len(df_clean)} / {initial_len}")
         return df_clean

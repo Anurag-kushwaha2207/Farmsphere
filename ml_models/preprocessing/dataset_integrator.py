@@ -1,19 +1,19 @@
 """
 FarmSphere AI - Multiple Dataset Integration Engine
-Solves the real-world agricultural challenge where soil, weather, crop, 
-and yield data originate from separate sources.
-
-Performs:
-1. Schema & Column alignment
-2. Geographic & Season key matching (District, Season, Year, Soil Type)
-3. Relational joins across Field ID and Crop ID
-4. Generation of feature-engineered datasets for ML training
+Integrates independent agricultural data sources:
+1. Soil testing records
+2. Weather climate records
+3. Crop master reference standards
+4. Farmer field registry
+5. Historical harvest yield records
+6. Real Kaggle Crop Recommendation dataset (N, P, K, temp, humidity, ph, rainfall)
 """
 
 import os
 import pandas as pd
 import numpy as np
 
+# Seed for 100% reproducibility across runs
 np.random.seed(42)
 
 RAW_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../datasets/raw'))
@@ -22,7 +22,7 @@ os.makedirs(PROCESSED_DIR, exist_ok=True)
 
 class DatasetIntegrator:
     def __init__(self):
-        print("Initializing Agricultural Dataset Integrator...")
+        print("Initializing Agricultural Dataset Integrator (seed=42)...")
         self.soil_df = pd.read_csv(os.path.join(RAW_DIR, 'soil_testing_data.csv'))
         self.weather_df = pd.read_csv(os.path.join(RAW_DIR, 'weather_climate_data.csv'))
         self.crop_master_df = pd.read_csv(os.path.join(RAW_DIR, 'crop_master_data.csv'))
@@ -31,71 +31,53 @@ class DatasetIntegrator:
 
     def build_crop_recommendation_dataset(self) -> pd.DataFrame:
         """
-        Integrates Soil + Weather + Crop requirements into the standard 
-        Crop Recommendation Feature Space:
-        Inputs: N, P, K, pH, Temperature, Humidity, Rainfall
-        Target: recommended_crop
+        Integrates the real Kaggle Crop Recommendation dataset.
+        Columns: N, P, K, temperature, humidity, ph, rainfall, label (22 crops, ~2200 rows)
+        Strictly requires datasets/raw/Crop_recommendation.csv. No silent fallbacks.
         """
-        print("\n[1/3] Building Integrated Crop Recommendation Dataset...")
-        records = []
+        print("\n[1/3] Preparing Real Kaggle Crop Recommendation Dataset...")
+        kaggle_raw_path = os.path.join(RAW_DIR, 'Crop_recommendation.csv')
         
-        # Aggregate mean soil parameters by district and soil type
-        soil_profile = self.soil_df.groupby(['district', 'soil_type']).agg({
-            'soil_ph': 'mean',
-            'nitrogen_mg_kg': 'mean',
-            'phosphorus_mg_kg': 'mean',
-            'potassium_mg_kg': 'mean',
-            'organic_carbon_pct': 'mean'
-        }).reset_index()
-
-        # Combine with crop biology to generate 2,400 realistic agro-climatic training samples
-        for _, crop in self.crop_master_df.iterrows():
-            crop_name = crop['crop_name']
-            season = crop['primary_season']
+        if not os.path.exists(kaggle_raw_path):
+            error_msg = (
+                "\n" + "=" * 70 + "\n"
+                "CRITICAL ERROR: Real Kaggle 'Crop_recommendation.csv' not found!\n"
+                f"Expected location: {kaggle_raw_path}\n\n"
+                "DOWNLOAD INSTRUCTIONS:\n"
+                "1. Download the dataset from Kaggle:\n"
+                "   https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset\n"
+                "2. Place the uncompressed CSV file at:\n"
+                f"   {kaggle_raw_path}\n"
+                "3. Re-run this pipeline.\n"
+                "Silent fallback to synthetic data is prohibited by project ground rules.\n"
+                + "=" * 70
+            )
+            print(error_msg)
+            raise FileNotFoundError(f"Missing mandatory dataset: {kaggle_raw_path}")
             
-            for _ in range(300): # 300 instances per crop
-                # Realistic variations around crop's ideal biological requirements
-                n = float(np.clip(np.random.normal(crop['req_n_kg_ha'], 15.0), 10, 220))
-                p = float(np.clip(np.random.normal(crop['req_p_kg_ha'], 10.0), 10, 140))
-                k = float(np.clip(np.random.normal(crop['req_k_kg_ha'], 12.0), 10, 160))
-                ph = float(np.clip(np.random.normal(crop['opt_ph'], 0.45), 4.5, 9.0))
-                temp = float(np.clip(np.random.normal(crop['opt_temp_c'], 3.0), 8, 42))
+        df_rec = pd.read_csv(kaggle_raw_path)
+        required_cols = ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall', 'label']
+        for col in required_cols:
+            if col not in df_rec.columns:
+                raise ValueError(f"Crop_recommendation.csv missing required column: {col}")
                 
-                if 'Kharif' in season or 'Annual' in season:
-                    humidity = float(np.clip(np.random.normal(78.0, 8.0), 45, 98))
-                elif 'Rabi' in season:
-                    humidity = float(np.clip(np.random.normal(58.0, 9.0), 30, 85))
-                else:
-                    humidity = float(np.clip(np.random.normal(45.0, 10.0), 20, 75))
-                    
-                rainfall = float(np.clip(np.random.normal(crop['opt_rainfall_mm'], crop['opt_rainfall_mm'] * 0.22), 40, 3000))
-                
-                records.append({
-                    'N': round(n, 1),
-                    'P': round(p, 1),
-                    'K': round(k, 1),
-                    'temperature': round(temp, 1),
-                    'humidity': round(humidity, 1),
-                    'ph': round(ph, 2),
-                    'rainfall': round(rainfall, 1),
-                    'label': crop_name
-                })
-                
-        df_rec = pd.DataFrame(records)
-        # Shuffle rows
-        df_rec = df_rec.sample(frac=1, random_state=42).reset_index(drop=True)
+        # Drop duplicates and clean whitespace
+        df_rec = df_rec.drop_duplicates().copy()
+        df_rec['label'] = df_rec['label'].str.strip()
+        
+        # Consistent reproducible shuffle
+        df_rec = df_rec.sample(frac=1.0, random_state=42).reset_index(drop=True)
+        
         out_path = os.path.join(PROCESSED_DIR, 'crop_recommendation_clean.csv')
         df_rec.to_csv(out_path, index=False)
-        print(f" Saved {out_path} ({len(df_rec)} samples across {df_rec['label'].nunique()} crops)")
+        print(f" Saved {out_path} ({len(df_rec)} rows, {df_rec['label'].nunique()} crops)")
         return df_rec
 
     def build_crop_suitability_dataset(self) -> pd.DataFrame:
         """
-        Creates Field-Specific Suitability Dataset (especially for Wheat and Rice):
-        Features: soil properties, seasonal weather, crop requirements
-        Target: suitability_score (0-100), suitability_class (Highly Suitable, Moderately Suitable, Marginally Suitable, Unsuitable)
+        Builds benchmark suitability evaluation dataset across master crops.
         """
-        print("\n[2/3] Building Field Crop Suitability Dataset...")
+        print("\n[2/3] Building Crop Suitability Reference Dataset...")
         records = []
         
         # Test wheat and rice against all soil testing samples
@@ -110,21 +92,13 @@ class DatasetIntegrator:
             
             # --- Evaluate Wheat Suitability ---
             score_wheat = 100.0
-            # pH factor (optimum 6.0 - 7.5)
-            if ph < 6.0 or ph > 7.8:
-                score_wheat -= 25.0
-            elif ph < 6.5 or ph > 7.3:
-                score_wheat -= 10.0
-            # Nitrogen factor (needs > 80)
+            if ph < 6.0 or ph > 7.8: score_wheat -= 25.0
+            elif ph < 6.5 or ph > 7.3: score_wheat -= 10.0
             if n < 60: score_wheat -= 18.0
             elif n < 80: score_wheat -= 8.0
-            # Phosphorus factor (needs > 35)
             if p < 25: score_wheat -= 15.0
-            # Potassium factor (needs > 30)
             if k < 25: score_wheat -= 12.0
-            # Salinity penalty
             if ec > 1.5: score_wheat -= 20.0
-            # Soil type affinity
             if stype in ['Alluvial', 'Clay Loam']: score_wheat += 5.0
             elif 'Sandy' in stype: score_wheat -= 15.0
             
@@ -151,18 +125,14 @@ class DatasetIntegrator:
 
             # --- Evaluate Rice Suitability ---
             score_rice = 100.0
-            # pH factor (optimum 5.5 - 7.0)
-            if ph < 5.0 or ph > 7.5:
-                score_rice -= 30.0
-            elif ph > 7.0:
-                score_rice -= 15.0
+            if ph < 5.0 or ph > 7.5: score_rice -= 30.0
+            elif ph > 7.0: score_rice -= 15.0
             if n < 80: score_rice -= 15.0
             if p < 25: score_rice -= 10.0
             if k < 35: score_rice -= 10.0
             if ec > 1.8: score_rice -= 25.0
-            # Rice loves clayey/heavy water-retentive soils
             if 'Clay' in stype: score_rice += 10.0
-            elif 'Sandy' in stype: score_rice -= 35.0 # High percolation loss
+            elif 'Sandy' in stype: score_rice -= 35.0
             
             score_rice = float(np.clip(score_rice, 10.0, 98.0))
             if score_rice >= 85: sclass_r = 'Highly Suitable'
@@ -188,16 +158,16 @@ class DatasetIntegrator:
         df_suit = pd.DataFrame(records)
         out_path = os.path.join(PROCESSED_DIR, 'crop_suitability_clean.csv')
         df_suit.to_csv(out_path, index=False)
-        print(f" Saved {out_path} ({len(df_suit)} crop-soil suitability evaluations)")
+        print(f" Saved {out_path} ({len(df_suit)} evaluations)")
         return df_suit
 
     def build_crop_yield_dataset(self) -> pd.DataFrame:
         """
         Integrates Field Records + Weather Records + Yield Records into a 
-        multi-feature regression dataset for Yield Prediction:
+        multi-feature regression dataset for Yield Prediction.
         Features: crop_name, soil_type, irrigation_source, field_area_ha, 
                   season, avg_temp_c, season_rainfall_mm, avg_humidity_pct
-        Target: actual_yield_tonnes_per_ha
+        Key for group-splitting: field_id
         """
         print("\n[3/3] Building Integrated Crop Yield Regression Dataset...")
         
@@ -211,12 +181,15 @@ class DatasetIntegrator:
         
         merged['actual_yield_quintals_per_acre'] = round(merged['actual_yield_tonnes_per_ha'] * 4.047, 2)
         
-        # Feature engineered columns (including field_id for group splitting)
+        # Preserve field_id for group splitting
         yield_final = merged[[
             'field_id', 'crop_name', 'soil_type', 'irrigation_source', 'field_area_ha',
             'season', 'avg_temp_c', 'season_rainfall_mm', 'avg_humidity_pct',
             'actual_yield_tonnes_per_ha', 'actual_yield_quintals_per_acre'
         ]].copy()
+        
+        # Ensure deterministic sort and index
+        yield_final = yield_final.sort_values(by=['field_id', 'crop_name', 'season']).reset_index(drop=True)
         
         out_path = os.path.join(PROCESSED_DIR, 'yield_prediction_clean.csv')
         yield_final.to_csv(out_path, index=False)
