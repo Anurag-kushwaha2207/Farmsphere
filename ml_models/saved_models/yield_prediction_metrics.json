@@ -1,6 +1,15 @@
 {
   "model_name": "Crop Yield Prediction Regressor",
-  "algorithm": "Random Forest Regressor",
+  "algorithm": "RandomForestRegressor (n_estimators=100, max_depth=12)",
+  "supported_crops": [
+    "Chickpea",
+    "Cotton (Seed Cotton)",
+    "Maize",
+    "Mustard",
+    "Potato",
+    "Rice (Paddy)",
+    "Wheat"
+  ],
   "features": {
     "categorical": [
       "crop_name",
@@ -9,30 +18,92 @@
       "season"
     ],
     "numeric": [
-      "field_area_ha",
       "avg_temp_c",
       "season_rainfall_mm",
       "avg_humidity_pct"
+    ],
+    "dropped_features": [
+      "field_area_ha"
     ]
   },
+  "split_strategy": "GroupShuffleSplit by field_id (80% train, 20% test)",
   "cross_validation": {
     "Ridge Regression": {
-      "mean_r2": 0.9658,
-      "std": 0.0029
+      "mean_r2": 0.8902,
+      "std_r2": 0.0281
     },
     "Random Forest Regressor": {
-      "mean_r2": 0.9869,
-      "std": 0.0009
+      "mean_r2": 0.9949,
+      "std_r2": 0.0009
     },
     "Gradient Boosting Regressor": {
-      "mean_r2": 0.9868,
-      "std": 0.0002
+      "mean_r2": 0.9947,
+      "std_r2": 0.001
     }
   },
-  "test_metrics": {
-    "r2_score": 0.9859,
-    "mae_tonnes_per_ha": 0.441,
-    "rmse_tonnes_per_ha": 0.877,
-    "mape_pct": 7.0
-  }
+  "baseline_crop_mean": {
+    "baseline_r2": 0.6876,
+    "baseline_mae": 1.05,
+    "baseline_rmse": 2.4,
+    "crop_means": {
+      "Chickpea": 0.96,
+      "Cotton (Seed Cotton)": 1.44,
+      "Maize": 3.13,
+      "Mustard": 1.26,
+      "Potato": 16.82,
+      "Rice (Paddy)": 2.44,
+      "Wheat": 2.65
+    }
+  },
+  "test_metrics_held_out": {
+    "train_r2": 0.998,
+    "test_r2": 0.9948,
+    "test_mae_tonnes_per_ha": 0.158,
+    "test_rmse_tonnes_per_ha": 0.311,
+    "within_crop_r2": 0.9791,
+    "beats_baseline": true,
+    "avg_uncertainty_interval_tonnes_per_ha": 0.28
+  },
+  "top_feature_importances": [
+    {
+      "feature": "crop_name_Potato",
+      "importance": 0.8314
+    },
+    {
+      "feature": "irrigation_source_Rainfed (No source)",
+      "importance": 0.1281
+    },
+    {
+      "feature": "crop_name_Maize",
+      "importance": 0.016
+    },
+    {
+      "feature": "soil_type_Sandy Loam",
+      "importance": 0.0095
+    },
+    {
+      "feature": "irrigation_source_Drip Irrigation",
+      "importance": 0.0081
+    },
+    {
+      "feature": "season_rainfall_mm",
+      "importance": 0.0033
+    },
+    {
+      "feature": "avg_temp_c",
+      "importance": 0.0011
+    },
+    {
+      "feature": "avg_humidity_pct",
+      "importance": 0.001
+    },
+    {
+      "feature": "irrigation_source_Tube Well (Canal / Groundwater)",
+      "importance": 0.0005
+    },
+    {
+      "feature": "irrigation_source_Sprinkler",
+      "importance": 0.0005
+    }
+  ]
 }
